@@ -2691,27 +2691,48 @@ async def get_conversation(conversation_id: str, db: Session = Depends(get_db)):
 async def create_conversation(conversation: ConversationCreate, db: Session = Depends(get_db)):
     """Create a new conversation."""
     try:
+        from datetime import timezone as tz
+        
         # Check if conversation already exists
         existing = db.query(DBConversation).filter(DBConversation.id == conversation.id).first()
         if existing:
             raise HTTPException(status_code=400, detail="Conversation already exists")
         
+        # Parse timestamps with timezone handling
+        def parse_timestamp(ts_str: str) -> datetime:
+            """Parse ISO timestamp with robust timezone handling."""
+            try:
+                # Replace 'Z' with '+00:00' for proper ISO format
+                ts_str_cleaned = ts_str.replace("Z", "+00:00")
+                dt = datetime.fromisoformat(ts_str_cleaned)
+                # Ensure timezone aware
+                if dt.tzinfo is None:
+                    dt = dt.replace(tzinfo=tz.utc)
+                return dt
+            except Exception:
+                # Fallback to current time if parsing fails
+                return datetime.now(tz.utc)
+        
         # Create conversation
         db_conversation = DBConversation(
             id=conversation.id,
             title=conversation.title,
-            created_at=datetime.fromisoformat(conversation.createdAt),
-            updated_at=datetime.fromisoformat(conversation.updatedAt)
+            created_at=parse_timestamp(conversation.createdAt),
+            updated_at=parse_timestamp(conversation.updatedAt)
         )
         
-        # Add messages
+        # Add messages with globally unique IDs
         for msg in conversation.messages:
+            # Generate globally unique message ID by prefixing with conversation ID
+            # This prevents collisions when different conversations have messages with same ID
+            global_message_id = f"{conversation.id}_{msg.id}"
+            
             db_message = DBMessage(
-                id=msg.id,
+                id=global_message_id,
                 conversation_id=conversation.id,
                 role=msg.role,
                 content=msg.content,
-                timestamp=datetime.fromisoformat(msg.timestamp),
+                timestamp=parse_timestamp(msg.timestamp),
                 sources=json.dumps(msg.sources) if msg.sources else None
             )
             db_conversation.messages.append(db_message)
