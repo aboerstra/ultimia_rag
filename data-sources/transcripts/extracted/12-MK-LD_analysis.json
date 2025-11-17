@@ -1,0 +1,42 @@
+{
+  "date": "Unknown",
+  "attendees": [
+    "Michael Kianmahd",
+    "Dr. Dan Holt"
+  ],
+  "summary": "The transcript appears to be a fragmented conversation involving Michael Kianmahd discussing job-related concerns. The discussion seems to touch on education needs and potential job changes.",
+  "key_topics": [
+    "Education needs",
+    "Job satisfaction",
+    "Employment changes"
+  ],
+  "decisions": [],
+  "action_items": [
+    "Education needs to be implemented (owner not specified)"
+  ],
+  "concerns": [
+    "Job dissatisfaction",
+    "Potential employment termination"
+  ],
+  "michael_priorities": [
+    "Expressing concern about job situation",
+    "Discussing need for education",
+    "Considering new employment"
+  ],
+  "commitments": [
+    "Looking for a new job"
+  ],
+  "filename": "12-MK-LD.pdf",
+  "metadata": {
+    "number": "12",
+    "attendees": [
+      "Michael Kianmahd",
+      "Laura Dolphin"
+    ],
+    "attendee_initials": [
+      "MK",
+      "LD"
+    ],
+    "filename": "12-MK-LD.pdf"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "date": "Unknown",
+  "attendees": [
+    "Michael Kianmahd",
+    "Laura Dolphin",
+    "Lyndon Elam"
+  ],
+  "summary": "The team discussed data model changes and deployment timing for a Salesforce implementation. Key focus was on collateral types, scoring models, and lead source configurations. The discussion centered around whether to push forward with current changes or wait to incorporate all updates.",
+  "key_topics": [
+    "Data model changes",
+    "Collateral types and record types",
+    "Scoring model integration",
+    "Lead source configuration",
+    "Project hours and timeline"
+  ],
+  "decisions": [
+    "Decided to proceed with deployment without waiting for all changes",
+    "Confirmed that 'other' collateral type doesn't need to be sent for scoring",
+    "Agreed to handle opportunity records in phase two"
+  ],
+  "action_items": [
+    {
+      "owner": "Lyndon",
+      "task": "Provide answers to Laura's questions by end of day"
+    },
+    {
+      "owner": "Laura",
+      "task": "Add picklist for other collateral types"
+    }
+  ],
+  "concerns": [
+    "Confluence access issues affecting documentation",
+    "Potential breaking of scoring model with undefined values",
+    "Impact of data model changes on existing validations",
+    "Dependencies between new features and data model changes"
+  ],
+  "michael_priorities": [
+    "Ensuring scoring model wouldn't break with collateral type 'other'",
+    "Maintaining forward progress without unnecessary delays",
+    "Understanding the structure of collateral objects and types"
+  ],
+  "commitments": [
+    {
+      "owner": "Lyndon",
+      "commitment": "Will provide answers to questions today"
+    },
+    {
+      "owner": "Laura",
+      "commitment": "Will implement straightforward collateral type changes"
+    }
+  ],
+  "filename": "04-MK-LD-LE.pdf",
+  "metadata": {
+    "number": "04",
+    "attendees": [
+      "Michael Kianmahd",
+      "Laura Dolphin",
+      "Lyndon Elam"
+    ],
+    "attendee_initials": [
+      "MK",
+      "LD",
+      "LE"
+    ],
+    "filename": "04-MK-LD-LE.pdf"
+  }
+}

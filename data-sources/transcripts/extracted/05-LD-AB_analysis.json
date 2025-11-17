@@ -1,0 +1,44 @@
+{
+  "date": "Unknown",
+  "attendees": [
+    "Laura Dolphin",
+    "Adrian Boerstra"
+  ],
+  "summary": "A meeting to discuss template testing, particularly around EFA implementation. Juan was expected but did not join. Discussion included challenges with Conga vs Nintex solutions and workload management.",
+  "key_topics": [
+    "EFA template testing and implementation",
+    "Conga vs Nintex comparison",
+    "Workload prioritization",
+    "SOW processing challenges"
+  ],
+  "decisions": [
+    "EFA likely won't go live next week due to needed testing"
+  ],
+  "action_items": [
+    "Continue testing EFA implementation",
+    "Plan to reuse logic and queries for lease template"
+  ],
+  "concerns": [
+    "Difficulty staying on top of multiple priorities",
+    "Challenges with Conga's technical support and functionality",
+    "SOW processing delays due to staff absence"
+  ],
+  "michael_priorities": [],
+  "commitments": [
+    "Adrian to reuse existing logic and queries for lease template",
+    "Laura to help with testing upon return on Monday"
+  ],
+  "filename": "05-LD-AB.pdf",
+  "metadata": {
+    "number": "05",
+    "attendees": [
+      "Laura Dolphin",
+      "Adrian Boerstra"
+    ],
+    "attendee_initials": [
+      "LD",
+      "AB"
+    ],
+    "filename": "05-LD-AB.pdf"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "_comment": "Use NotebookLM to generate the mappings, then paste them here",
+  "clockify_to_jira": {
+    "MaxCom Development": "MAXCOM",
+    "Internal Tools": "TOOLS",
+    "Example Clockify Project": "JIRA_KEY"
+  },
+  "jira_to_portfolio": {
+    "MAXCOM": "proj_application_intake_optimization",
+    "TOOLS": "proj_internal_tooling",
+    "JIRA_KEY": "portfolio_project_id"
+  },
+  "description_keywords": {
+    "AIO": "proj_application_intake_optimization",
+    "application intake": "proj_application_intake_optimization",
+    "booking": "proj_booking_optimization",
+    "keyword": "portfolio_project_id"
+  }
+}

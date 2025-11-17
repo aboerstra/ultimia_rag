@@ -1,0 +1,370 @@
+You’re absolutely right that this is a “mixed naive/aware datetime” problem — but the really sneaky bit here is **where** that comparison is happening. Your normalization in `get_conversation()` is fine; something else is tripping over the mixed timestamps *before* your code gets to run.
+
+Let me walk through a concrete mental model and then give you specific, drop-in fixes you can try.
+
+---
+
+## 1. What’s *actually* throwing `can't compare offset-naive and offset-aware datetimes`?
+
+That exact `TypeError` only happens in Python when something does:
+
+```python
+a < b  # or sorted([a, b]) / max(a, b) / min(a, b)
+```
+
+where:
+
+* `a` is a **naive** `datetime` (`tzinfo=None`)
+* `b` is an **aware** `datetime` (`tzinfo=UTC` or other)
+
+So, regardless of SQLAlchemy, this error means:
+
+> Somewhere in your code path for `GET /api/conversations/{id}`, Python is trying to **sort or compare** `datetime` objects from the DB.
+
+You’ve already:
+
+* Stopped iterating `conversation.messages` directly
+* Added your own `messages_list.sort(key=lambda m: m["timestamp_sort"])`
+
+So the comparison is happening **earlier** or **elsewhere** than the snippet you pasted.
+
+The usual culprits in a stack like yours:
+
+1. **Implicit sorting in relationship / mapper config**
+
+   * `relationship(..., order_by=Message.timestamp)`
+   * or `__mapper_args__ = {"order_by": timestamp}` in your `Message` model.
+2. **Helper functions** that calculate things like “last message”:
+
+   * `last_ts = max(m.timestamp for m in messages)`
+3. **Conversation serialization / schema logic**, e.g., in Pydantic:
+
+   * Custom property that does `sorted(self.messages, key=lambda m: m.timestamp)`
+
+Even if you *think* you’re not calling those, they can still be triggered by:
+
+* Accessing `conversation` with `lazy="joined"`, `subquery`, etc.
+* Returning `conversation` directly as a response_model (Pydantic walks attributes)
+* A property on `Conversation` that touches `.messages`
+
+So the error message is *wrapped* as `Database error` in your FastAPI handler, but the actual stack frame is likely in some Python sort/max/min.
+
+---
+
+## 2. Quick binary test: prove the error is pre-normalization
+
+In `get_conversation` (or whatever handler backs `/api/conversations/{conversation_id}`), temporarily do this:
+
+```python
+@app.get("/api/conversations/{conversation_id}")
+async def get_conversation(conversation_id: str, db: Session = Depends(get_db)):
+    # 1) Comment out *all* message querying/processing
+    # conversation = db.query(DBConversation)...
+    # messages = db.query(DBMessage)...
+
+    return {
+        "id": conversation_id,
+        "messages": [],
+    }
+```
+
+If this returns fine → the bug is somewhere in:
+
+* the ORM query, OR
+* accessing conversation/messages, OR
+* response_model / schema logic that touches them.
+
+Then re-introduce pieces one by one:
+
+### Step 1 – Just fetch the conversation row, no relationships
+
+```python
+conversation = (
+    db.query(DBConversation)
+    .filter(DBConversation.id == conversation_id)
+    .first()
+)
+
+return {"id": conversation.id, "title": conversation.title}
+```
+
+* If this **already** throws → something in your `DBConversation` mapper (e.g. `__mapper_args__`, properties, hybrid attributes, etc.) is comparing datetimes.
+* If this works → the problem is tied to messages.
+
+### Step 2 – Fetch messages via **raw SQL** (bypassing ORM types)
+
+If you want a very clean isolation, do this:
+
+```python
+from sqlalchemy import text
+
+rows = db.execute(
+    text("SELECT id, role, content, timestamp, sources FROM messages WHERE conversation_id = :cid"),
+    {"cid": conversation_id}
+).fetchall()
+
+# Do NOT convert timestamp here; just return it as string
+messages = []
+for row in rows:
+    messages.append({
+        "id": row[0],
+        "role": row[1],
+        "content": row[2],
+        "timestamp": row[3],   # likely string
+        "sources": row[4],
+    })
+
+return {"id": conversation.id, "title": conversation.title, "messages": messages}
+```
+
+* If this works → the bug is definitely in the **ORM side** (mapper type + some Python comparison).
+* If this still fails → something else is going on (e.g. properties on `Conversation` that assume `conversation.messages` is sorted).
+
+---
+
+## 3. Very likely hot spot: model / relationship definitions
+
+Based on your description and the fact the list endpoint works but the detail endpoint doesn’t, I’d bet on **one of these** being present in `api/models.py`:
+
+### 3.1 Relationship-level ordering
+
+```python
+# Conversation model
+messages = relationship(
+    "Message",
+    back_populates="conversation",
+    cascade="all, delete-orphan",
+    # 👇 this might be present
+    order_by="Message.timestamp"
+)
+```
+
+If that `order_by` is implemented via Python collection ordering (`orderinglist` pattern) rather than SQL `ORDER BY`, this will blow up as soon as both naive + aware values exist.
+
+**Fix options:**
+
+* **Remove** the `order_by` entirely and let your endpoint handle sorting.
+* Or make it explicitly SQL-level ordering (if it isn’t already):
+
+```python
+from sqlalchemy import asc
+messages = relationship(
+    "Message",
+    back_populates="conversation",
+    cascade="all, delete-orphan",
+    order_by=lambda: asc(Message.timestamp)
+)
+```
+
+### 3.2 Mapper-level default ordering
+
+```python
+class Message(Base):
+    __tablename__ = "messages"
+    id = Column(String, primary_key=True)
+    timestamp = Column(DateTime, nullable=False, default=datetime.utcnow)
+
+    __mapper_args__ = {
+        "order_by": timestamp  # 👈 this can cause Python-level comparisons
+    }
+```
+
+Try commenting that out **completely**:
+
+```python
+__mapper_args__ = {}
+# or just delete the whole __mapper_args__ block
+```
+
+Restart Uvicorn, retest the conversation endpoint.
+
+---
+
+## 4. The underlying data problem: mixed naive + aware timestamps
+
+Regardless of where the error is thrown, you do have mixed timestamps somewhere. You’ll eventually want to normalize them.
+
+### 4.1 Inspect the raw DB values
+
+You already outlined this; I’d still run it:
+
+```bash
+sqlite3 data-sources/conversations.db "
+SELECT id, timestamp, typeof(timestamp)
+FROM messages
+WHERE conversation_id='conv_1762979997903_6uh8i3qby'
+LIMIT 20;
+"
+```
+
+Look for patterns like:
+
+* `2025-11-13T20:30:00` (no offset)
+* `2025-11-13T20:30:00+00:00`
+* `2025-11-13T20:30:00Z`
+* Some stored as `TEXT`, some as `INTEGER`
+
+This will confirm the mixed state.
+
+---
+
+## 5. Concrete “get-it-working-today” fix: custom UTC DateTime
+
+You already sketched a `TZDateTime` — that’s exactly what I’d do, but with one tweak: normalize **on read**, not just on write, so existing rows get healed as they’re loaded.
+
+In `api/models.py`:
+
+```python
+from sqlalchemy.types import TypeDecorator, DateTime as SA_DateTime
+from datetime import datetime, timezone
+
+class TZDateTime(TypeDecorator):
+    impl = SA_DateTime
+    cache_ok = True
+
+    def process_bind_param(self, value, dialect):
+        # Called when saving to DB
+        if value is None:
+            return None
+        if isinstance(value, str):
+            # Try to parse ISO string
+            value = datetime.fromisoformat(value.replace("Z", "+00:00"))
+        if value.tzinfo is None:
+            value = value.replace(tzinfo=timezone.utc)
+        return value
+
+    def process_result_value(self, value, dialect):
+        # Called when loading from DB
+        if value is None:
+            return None
+        if isinstance(value, str):
+            # SQLite might hand this back as string if stored that way
+            value = datetime.fromisoformat(value.replace("Z", "+00:00"))
+        if value.tzinfo is None:
+            value = value.replace(tzinfo=timezone.utc)
+        return value
+```
+
+Then on your models:
+
+```python
+from datetime import datetime, timezone
+
+class Message(Base):
+    __tablename__ = "messages"
+
+    id = Column(String, primary_key=True)
+    conversation_id = Column(String, ForeignKey("conversations.id"))
+    role = Column(String, nullable=False)
+    content = Column(String, nullable=False)
+    timestamp = Column(TZDateTime, nullable=False, default=lambda: datetime.now(timezone.utc))
+    # ...
+
+class Conversation(Base):
+    __tablename__ = "conversations"
+
+    id = Column(String, primary_key=True)
+    title = Column(String)
+    created_at = Column(TZDateTime, default=lambda: datetime.now(timezone.utc))
+    updated_at = Column(TZDateTime, default=lambda: datetime.now(timezone.utc), onupdate=lambda: datetime.now(timezone.utc))
+```
+
+Restart API and test again.
+
+If you still see the same error **after** this:
+
+* That means something else is holding onto old message instances or doing comparisons right around DB load, *before* `process_result_value` can normalize (unlikely, but possible).
+* More likely: there’s another place in the code where you build datetimes manually (e.g., from request payload) and those carry inconsistent tzinfo.
+
+---
+
+## 6. Longer-term: one-time DB cleanup script
+
+Once you’re confident in the format you want (I’d recommend **UTC-aware only**), run a one-time migration over the SQLite file:
+
+```python
+# scripts/fix_message_timestamps.py
+import sqlite3
+from datetime import datetime, timezone
+
+DB_PATH = "data-sources/conversations.db"
+
+conn = sqlite3.connect(DB_PATH)
+cursor = conn.cursor()
+
+cursor.execute("SELECT id, timestamp FROM messages")
+rows = cursor.fetchall()
+
+for msg_id, ts in rows:
+    if ts is None:
+        continue
+
+    # SQLite may hand `ts` as str
+    if isinstance(ts, (bytes, bytearray)):
+        ts = ts.decode("utf-8")
+
+    if isinstance(ts, str):
+        # Normalize common variants
+        # Handle Z suffix
+        ts_str = ts.replace("Z", "+00:00")
+        dt = datetime.fromisoformat(ts_str)
+    else:
+        # Already datetime
+        dt = ts
+
+    # Force UTC
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=timezone.utc)
+
+    normalized = dt.isoformat()
+
+    cursor.execute("UPDATE messages SET timestamp = ? WHERE id = ?", (normalized, msg_id))
+
+conn.commit()
+conn.close()
+print("Timestamps normalized.")
+```
+
+Run:
+
+```bash
+python scripts/fix_message_timestamps.py
+```
+
+After that, your models can stay as `DateTime(timezone=True)` or `TZDateTime`, and any `sorted()`/`max()` will be happy.
+
+---
+
+## 7. Don’t forget to hunt hidden sorts / comparisons
+
+Since your normalization block “never runs,” I’d also do a quick code scan to catch any surprise comparisons:
+
+```bash
+# Anything sorting messages or using timestamp
+grep -R "timestamp" api | grep -E "sort|max|min|order_by|__mapper_args__"
+
+# Also:
+grep -R "messages" api | grep -E "sorted|max|min"
+```
+
+Things to look for:
+
+* `sorted(conversation.messages, key=lambda m: m.timestamp)`
+* `max(message.timestamp for message in conversation.messages)`
+* `__mapper_args__ = {"order_by": Message.timestamp}`
+
+Kill those or switch them to numeric keys after normalization.
+
+---
+
+## 8. Suggested sequence for you
+
+If I were at your keyboard, I’d do this in order:
+
+1. **Comment out** any `order_by` / `__mapper_args__` referencing `timestamp` on `Message` or `Conversation`.
+2. Add the `TZDateTime` type and switch timestamp fields to it.
+3. Temporarily simplify `get_conversation()` to prove where the error occurs (no messages, then raw SQL).
+4. Once endpoint works again, run the DB cleanup script to fully normalize timestamps.
+5. Re-introduce Python-side sorting using your `timestamp_sort` approach if you need stable ordering.
+
+If you want, you can paste your `Conversation` and `Message` model definitions and your `get_conversation()` endpoint, and I can mark up the exact lines I’d change.

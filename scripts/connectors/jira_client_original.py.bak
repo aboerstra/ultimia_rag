@@ -1,0 +1,241 @@
+"""Jira API client for project data collection."""
+from datetime import datetime, timedelta
+from typing import Dict, List, Optional
+import requests
+from requests.auth import HTTPBasicAuth
+import sys
+from pathlib import Path
+
+# Add scripts directory to path for imports
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from config import Config
+
+
+class JiraClient:
+    """Client for interacting with Jira API using the new v3 /search/jql endpoint."""
+    
+    def __init__(self):
+        """Initialize Jira client with direct requests."""
+        self.base_url = Config.JIRA_URL
+        self.auth = HTTPBasicAuth(Config.JIRA_EMAIL, Config.JIRA_API_TOKEN)
+        self.headers = {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+        
+    def get_all_projects(self) -> List[Dict]:
+        """Get all projects from Jira workspace."""
+        try:
+            url = f"{self.base_url}/rest/api/3/project"
+            response = requests.get(url, auth=self.auth, headers=self.headers)
+            response.raise_for_status()
+            projects = response.json()
+            
+            return [
+                {
+                    'key': p['key'],
+                    'name': p['name'],
+                    'id': p['id']
+                }
+                for p in projects
+            ]
+        except Exception as e:
+            print(f"Error fetching projects: {e}")
+            return []
+    
+    def get_issues(
+        self, 
+        project_key: str = None,
+        months_back: int = 6,
+        max_results: int = 1000
+    ) -> List[Dict]:
+        """
+        Get issues from specified project using new /search/jql endpoint.
+        
+        Args:
+            project_key: Single project key (e.g., 'MAXCOM')
+            months_back: How many months of data to retrieve
+            max_results: Maximum number of issues to return
+            
+        Returns:
+            List of issue dictionaries
+        """
+        start_date = datetime.now() - timedelta(days=months_back * 30)
+        date_filter = start_date.strftime('%Y-%m-%d')
+        
+        # Build JQL query
+        if project_key:
+            project_filter = f"project = {project_key}"
+        else:
+            project_filter = "1=1"  # All projects
+        
+        # Use 'updated' instead of 'created' to catch issues worked on recently
+        jql = f"{project_filter} AND updated >= '{date_filter}' ORDER BY updated DESC"
+        
+        try:
+            # Use new /search/jql endpoint with POST
+            url = f"{self.base_url}/rest/api/3/search/jql"
+            
+            # Define fields we want to retrieve
+            fields = [
+                'summary', 'status', 'issuetype', 'priority',
+                'created', 'updated', 'resolutiondate',
+                'assignee', 'reporter', 'labels', 'project',
+                'customfield_10016',  # Story points
+                'customfield_10014'   # Epic link
+            ]
+            
+            all_issues = []
+            next_token = None
+            
+            # Handle pagination with nextPageToken
+            while True:
+                payload = {
+                    'jql': jql,
+                    'maxResults': min(100, max_results - len(all_issues)),
+                    'fields': fields
+                }
+                
+                if next_token:
+                    payload['nextPageToken'] = next_token
+                
+                response = requests.post(url, auth=self.auth, headers=self.headers, json=payload)
+                response.raise_for_status()
+                result = response.json()
+                
+                # NEW endpoint uses 'values' field instead of 'issues'
+                issues = result.get('values', [])
+                all_issues.extend(issues)
+                
+                # Check if there are more pages
+                next_token = result.get('nextPageToken')
+                if not next_token or len(all_issues) >= max_results:
+                    break
+            
+            return self._process_issues(all_issues)
+            
+        except Exception as e:
+            print(f"Error fetching issues: {e}")
+            return []
+    
+    def _process_issues(self, raw_issues: List) -> List[Dict]:
+        """Process raw Jira issues into structured data."""
+        processed = []
+        
+        for issue in raw_issues:
+            fields = issue.get('fields', {})
+            
+            # Safely get nested values with defaults
+            status = fields.get('status', {})
+            issuetype = fields.get('issuetype', {})
+            priority = fields.get('priority', {})
+            assignee = fields.get('assignee', {})
+            reporter = fields.get('reporter', {})
+            project = fields.get('project', {})
+            
+            processed.append({
+                'key': issue.get('key'),
+                'summary': fields.get('summary'),
+                'status': status.get('name') if status else None,
+                'type': issuetype.get('name') if issuetype else None,
+                'priority': priority.get('name') if priority else None,
+                'created': fields.get('created'),
+                'updated': fields.get('updated'),
+                'resolved': fields.get('resolutiondate'),
+                'assignee': assignee.get('displayName') if assignee else 'Unassigned',
+                'reporter': reporter.get('displayName') if reporter else None,
+                'story_points': fields.get('customfield_10016'),
+                'epic_link': fields.get('customfield_10014'),
+                'labels': fields.get('labels', []),
+                'project': project.get('key') if project else None,
+            })
+        
+        return processed
+    
+    def get_sprints(self, board_id: int) -> List[Dict]:
+        """Get sprint data for a board."""
+        try:
+            url = f"{self.base_url}/rest/agile/1.0/board/{board_id}/sprint"
+            response = requests.get(url, auth=self.auth, headers=self.headers)
+            response.raise_for_status()
+            result = response.json()
+            return result.get('values', [])
+        except Exception as e:
+            print(f"Error fetching sprints: {e}")
+            return []
+    
+    def get_boards(self, project_key: str = None) -> List[Dict]:
+        """Get all boards, optionally filtered by project."""
+        try:
+            url = f"{self.base_url}/rest/agile/1.0/board"
+            if project_key:
+                url += f"?projectKeyOrId={project_key}"
+            
+            response = requests.get(url, auth=self.auth, headers=self.headers)
+            response.raise_for_status()
+            result = response.json()
+            return result.get('values', [])
+        except Exception as e:
+            print(f"Error fetching boards: {e}")
+            return []
+    
+    def get_velocity_data(self, board_id: int, num_sprints: int = 6) -> Dict:
+        """
+        Calculate velocity metrics for recent sprints.
+        
+        Args:
+            board_id: Jira board ID
+            num_sprints: Number of recent sprints to analyze
+            
+        Returns:
+            Dict with velocity metrics
+        """
+        sprints = self.get_sprints(board_id)
+        recent_sprints = sorted(sprints, key=lambda x: x.get('startDate', ''), reverse=True)[:num_sprints]
+        
+        velocity_data = {
+            'sprints': [],
+            'average_velocity': 0,
+            'trend': 'stable'
+        }
+        
+        total_points = 0
+        for sprint in recent_sprints:
+            sprint_id = sprint.get('id')
+            # Get completed issues in sprint using new /search/jql endpoint
+            jql = f"Sprint = {sprint_id} AND status = Done"
+            
+            try:
+                url = f"{self.base_url}/rest/api/3/search/jql"
+                payload = {
+                    'jql': jql,
+                    'maxResults': 100,
+                    'fields': ['customfield_10016']  # Story points field
+                }
+                
+                response = requests.post(url, auth=self.auth, headers=self.headers, json=payload)
+                response.raise_for_status()
+                result = response.json()
+                
+                # Use 'values' field from new endpoint
+                issues = result.get('values', [])
+                completed_points = sum(
+                    i.get('fields', {}).get('customfield_10016', 0) or 0 
+                    for i in issues
+                )
+                
+                velocity_data['sprints'].append({
+                    'name': sprint.get('name'),
+                    'points': completed_points,
+                    'start': sprint.get('startDate'),
+                    'end': sprint.get('endDate')
+                })
+                total_points += completed_points
+                
+            except Exception as e:
+                print(f"Error calculating velocity for sprint {sprint_id}: {e}")
+        
+        if velocity_data['sprints']:
+            velocity_data['average_velocity'] = total_points / len(velocity_data['sprints'])
+        
+        return velocity_data

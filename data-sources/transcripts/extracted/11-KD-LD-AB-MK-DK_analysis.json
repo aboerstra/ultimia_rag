@@ -1,0 +1,62 @@
+{
+  "date": "Unknown",
+  "attendees": [
+    "Kaleb Dague",
+    "Laura Dolphin",
+    "Adrian Boerstra",
+    "Michael Kianmahd",
+    "Dave Kaplan"
+  ],
+  "summary": "The team discussed project planning and value streams, focusing on timeline management and implementation approaches. They reviewed a Github portfolio/imagery showing different value streams including intake, credit, docs funding, servicing and collections. The discussion centered around project estimation accuracy and implementation strategy.",
+  "key_topics": [
+    "Value streams and mini projects review",
+    "T-shirt sizing exercise results",
+    "Project implementation approaches (MVP vs full rollout)",
+    "Timeline and cost expectations management"
+  ],
+  "decisions": [
+    "Different approaches needed for different components - MVP approach for new features, but not suitable for data model",
+    "T-shirt sizing estimates are directionally correct but not precise"
+  ],
+  "action_items": [
+    "Review and potentially revise project timelines",
+    "Consider compressing project timelines",
+    "Evaluate possibility of doing fewer simultaneous projects"
+  ],
+  "concerns": [
+    "Difficulty in managing timelines and cost expectations",
+    "Uncertainty about end state visualization",
+    "Possible 50% margin of error in estimates",
+    "Higher complexity and risk of failure with longer timelines",
+    "Unclear reasons for extended project durations"
+  ],
+  "michael_priorities": [
+    "Getting better clarity on timeline and cost expectations",
+    "Understanding what causes project stretches",
+    "Managing internal and external expectations",
+    "Reducing complexity and risk"
+  ],
+  "commitments": [
+    "Team will be thoughtful about which implementation approach to take for different components",
+    "Will focus on being protective against potential project risks"
+  ],
+  "filename": "11-KD-LD-AB-MK-DK.pdf",
+  "metadata": {
+    "number": "11",
+    "attendees": [
+      "Kaleb Dague",
+      "Laura Dolphin",
+      "Adrian Boerstra",
+      "Michael Kianmahd",
+      "Dave Kaplan"
+    ],
+    "attendee_initials": [
+      "KD",
+      "LD",
+      "AB",
+      "MK",
+      "DK"
+    ],
+    "filename": "11-KD-LD-AB-MK-DK.pdf"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "date": "Unknown",
+  "attendees": [
+    "Michael Kianmahd",
+    "Laura Dolphin",
+    "Lyndon"
+  ],
+  "summary": "The team discussed issues with checklist management in Salesforce and AIO systems, focusing on notification spam and workflow improvements. They explored solutions for managing archived checklists and ways to better control email notifications to referral partners.",
+  "key_topics": [
+    "Checklist management between Salesforce and AIO",
+    "Email notification control",
+    "Document upload workflow",
+    "User permissions for checklist deletion"
+  ],
+  "decisions": [
+    "Laura will work on giving Juan permission to delete superfluous old checklists in Salesforce",
+    "Team agreed current issues are 'nice-to-haves' rather than critical fixes"
+  ],
+  "action_items": [
+    {
+      "owner": "Laura Dolphin",
+      "task": "Implement Salesforce permission changes for checklist deletion"
+    }
+  ],
+  "concerns": [
+    "Multiple email notifications being sent when documents are uploaded",
+    "Lack of automated communication between Salesforce and AIO",
+    "Partners receiving notifications before checklist is ready",
+    "Limited ability to customize checklist views for different users"
+  ],
+  "michael_priorities": [
+    "Understanding if issues were correctly interpreted",
+    "Determining if changes were must-haves vs nice-to-haves",
+    "Exploring possibility of role-based checklist views",
+    "Finding ways to reduce notification spam"
+  ],
+  "commitments": [
+    {
+      "owner": "Laura Dolphin",
+      "commitment": "Will fix the Salesforce checklist deletion issue"
+    }
+  ],
+  "filename": "02-MK-LD-LE.pdf",
+  "metadata": {
+    "number": "02",
+    "attendees": [
+      "Michael Kianmahd",
+      "Laura Dolphin",
+      "Lyndon Elam"
+    ],
+    "attendee_initials": [
+      "MK",
+      "LD",
+      "LE"
+    ],
+    "filename": "02-MK-LD-LE.pdf"
+  }
+}

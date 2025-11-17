@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: #f8f9fa;
+}
+
+/* Ensure smooth transitions between layout changes */
+.app-container > * {
+  transition: width 0.3s ease, flex 0.3s ease;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+}
+
+/* Print styles */
+@media print {
+  .conversation-list,
+  .context-panel {
+    display: none !important;
+  }
+
+  .chat-workspace {
+    width: 100% !important;
+  }
+}

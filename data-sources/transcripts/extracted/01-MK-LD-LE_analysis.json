@@ -1,0 +1,61 @@
+{
+  "date": "Unknown",
+  "attendees": [
+    "Michael Kianmahd",
+    "Laura Dolphin",
+    "Lyndon"
+  ],
+  "summary": "The team discussed issues with checklist management in Salesforce and AIO systems, focusing on notification spam and workflow improvements. They explored solutions for managing archived checklists and ways to better control email notifications to referral partners.",
+  "key_topics": [
+    "Salesforce checklist deletion/archiving process",
+    "Email notification management for document uploads",
+    "Custom checklist configuration",
+    "AIO integration and workflow improvements"
+  ],
+  "decisions": [
+    "Laura will implement a button in Salesforce to mark checklists as canceled rather than deleting them",
+    "Manual workaround for checklist management is acceptable in short term"
+  ],
+  "action_items": [
+    {
+      "owner": "Laura Dolphin",
+      "task": "Check with Nir about API capabilities for selective contact assignment in checklists"
+    },
+    {
+      "owner": "Laura Dolphin",
+      "task": "Fix Salesforce checklist deletion permission for Juan"
+    }
+  ],
+  "concerns": [
+    "Partners receiving too many email notifications",
+    "Redundant notifications for already-submitted documents",
+    "Lack of ability to customize checklist views for different user types",
+    "Manual process required for clearing old checklists"
+  ],
+  "michael_priorities": [
+    "Understanding if issues were must-haves vs nice-to-haves",
+    "Exploring possibility of role-based checklist views",
+    "Improving communication flow between systems"
+  ],
+  "commitments": [
+    {
+      "owner": "Laura Dolphin",
+      "commitment": "Will implement Salesforce fix for checklist management"
+    }
+  ],
+  "filename": "01-MK-LD-LE.pdf",
+  "metadata": {
+    "number": "01",
+    "attendees": [
+      "Michael Kianmahd",
+      "Laura Dolphin",
+      "Lyndon Elam"
+    ],
+    "attendee_initials": [
+      "MK",
+      "LD",
+      "LE"
+    ],
+    "filename": "01-MK-LD-LE.pdf"
+  }
+}

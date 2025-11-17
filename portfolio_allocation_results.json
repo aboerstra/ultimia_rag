@@ -1,0 +1,238 @@
+{
+  "stage_stats": {
+    "jira_direct": {
+      "count": 154,
+      "hours": 137.25
+    },
+    "ai_semantic": {
+      "count": 277,
+      "hours": 265.5
+    },
+    "proportional": {
+      "count": 1100,
+      "hours": 58.75
+    }
+  },
+  "report": {
+    "total_hours": 461.5,
+    "total_entries": 1531,
+    "by_project": {
+      "asana-1210391302265434": {
+        "hours": 8.021104903786464,
+        "jira_direct": 5.5,
+        "ai_semantic": 1.5,
+        "proportional_overhead": 1.0211049037864683
+      },
+      "asana-1210391095918640": {
+        "hours": 48.12662942271879,
+        "jira_direct": 42.0,
+        "ai_semantic": 0.0,
+        "proportional_overhead": 6.126629422718807
+      },
+      "proj-1749661671996": {
+        "hours": 3.724084419615147,
+        "jira_direct": 0.75,
+        "ai_semantic": 2.5,
+        "proportional_overhead": 0.47408441961514586
+      },
+      "asana-1210391103793000": {
+        "hours": 30.365611421477332,
+        "jira_direct": 18.0,
+        "ai_semantic": 8.5,
+        "proportional_overhead": 3.865611421477344
+      },
+      "proj-1749567603868": {
+        "hours": 17.474549968963373,
+        "jira_direct": 9.75,
+        "ai_semantic": 5.5,
+        "proportional_overhead": 2.224549968963377
+      },
+      "proj-1749567446769": {
+        "hours": 2.5782122905027953,
+        "jira_direct": 2.25,
+        "ai_semantic": 0.0,
+        "proportional_overhead": 0.32821229050279327
+      },
+      "proj-1749661818420": {
+        "hours": 57.866542520173844,
+        "jira_direct": 33.5,
+        "ai_semantic": 17.0,
+        "proportional_overhead": 7.366542520173805
+      },
+      "proj-1749508914094": {
+        "hours": 25.209186840471745,
+        "jira_direct": 4.5,
+        "ai_semantic": 17.5,
+        "proportional_overhead": 3.209186840471757
+      },
+      "asana-1210390931454642": {
+        "hours": 4.010552451893232,
+        "jira_direct": 3.5,
+        "ai_semantic": 0.0,
+        "proportional_overhead": 0.5105524518932342
+      },
+      "proj-1749661102087": {
+        "hours": 1.7188081936685304,
+        "jira_direct": 1.5,
+        "ai_semantic": 0.0,
+        "proportional_overhead": 0.2188081936685288
+      },
+      "proj-1749568117556": {
+        "hours": 4.010552451893232,
+        "jira_direct": 2.75,
+        "ai_semantic": 0.75,
+        "proportional_overhead": 0.5105524518932342
+      },
+      "proj-1749508892079": {
+        "hours": 22.344506517690895,
+        "jira_direct": 5.0,
+        "ai_semantic": 14.5,
+        "proportional_overhead": 2.844506517690875
+      },
+      "asana-1210391302265438": {
+        "hours": 8.021104903786464,
+        "jira_direct": 2.25,
+        "ai_semantic": 4.75,
+        "proportional_overhead": 1.0211049037864683
+      },
+      "proj-1749509350637": {
+        "hours": 30.365611421477332,
+        "jira_direct": 3.75,
+        "ai_semantic": 22.75,
+        "proportional_overhead": 3.865611421477344
+      },
+      "proj-1749660644440": {
+        "hours": 3.151148355058968,
+        "jira_direct": 0.75,
+        "ai_semantic": 2.0,
+        "proportional_overhead": 0.4011483550589696
+      },
+      "asana-1210391302265436": {
+        "hours": 14.609869646182506,
+        "jira_direct": 0.75,
+        "ai_semantic": 12.0,
+        "proportional_overhead": 1.8598696461824946
+      },
+      "proj-1749508665660": {
+        "hours": 30.365611421477332,
+        "jira_direct": 0.25,
+        "ai_semantic": 26.25,
+        "proportional_overhead": 3.865611421477344
+      },
+      "asana-1210390931454634": {
+        "hours": 0.5729360645561764,
+        "jira_direct": 0.5,
+        "ai_semantic": 0.0,
+        "proportional_overhead": 0.07293606455617627
+      },
+      "proj-1749509422675": {
+        "hours": 50.13190564866546,
+        "jira_direct": 0.0,
+        "ai_semantic": 43.75,
+        "proportional_overhead": 6.381905648665426
+      },
+      "proj-1749752645508": {
+        "hours": 6.875232774674122,
+        "jira_direct": 0.0,
+        "ai_semantic": 6.0,
+        "proportional_overhead": 0.8752327746741152
+      },
+      "proj-1749508625004": {
+        "hours": 23.490378646803187,
+        "jira_direct": 0.0,
+        "ai_semantic": 20.5,
+        "proportional_overhead": 2.990378646803229
+      },
+      "proj-1749508702604": {
+        "hours": 13.177529484792048,
+        "jira_direct": 0.0,
+        "ai_semantic": 11.5,
+        "proportional_overhead": 1.677529484792054
+      },
+      "proj-1749766825840": {
+        "hours": 35.80850403476101,
+        "jira_direct": 0.0,
+        "ai_semantic": 31.25,
+        "proportional_overhead": 4.558504034761018
+      },
+      "proj-1749661288869": {
+        "hours": 0.2864680322780882,
+        "jira_direct": 0.0,
+        "ai_semantic": 0.25,
+        "proportional_overhead": 0.03646803227808813
+      },
+      "proj-1749766382576": {
+        "hours": 19.193358162631924,
+        "jira_direct": 0.0,
+        "ai_semantic": 16.75,
+        "proportional_overhead": 2.4433581626319056
+      }
+    },
+    "by_value_stream": {
+      "vs-1749489719651": {
+        "hours": 53.855990068280555,
+        "jira_direct": 12.0,
+        "ai_semantic": 35.0,
+        "proportional_overhead": 6.855990068280571
+      },
+      "vs-1749489636255": {
+        "hours": 80.78398510242063,
+        "jira_direct": 62.0,
+        "ai_semantic": 8.5,
+        "proportional_overhead": 10.283985102420857
+      },
+      "vs-1749489755025": {
+        "hours": 16.90161390440719,
+        "jira_direct": 0.75,
+        "ai_semantic": 14.0,
+        "proportional_overhead": 2.151613904407201
+      },
+      "vs-1749489737585": {
+        "hours": 71.33054003724394,
+        "jira_direct": 10.0,
+        "ai_semantic": 52.25,
+        "proportional_overhead": 9.080540037243951
+      },
+      "vs-1749489900284": {
+        "hours": 121.46244568590934,
+        "jira_direct": 38.5,
+        "ai_semantic": 67.5,
+        "proportional_overhead": 15.462445685909373
+      },
+      "vs-1749489787473": {
+        "hours": 61.01769087523279,
+        "jira_direct": 4.5,
+        "ai_semantic": 48.75,
+        "proportional_overhead": 7.76769087523278
+      },
+      "vs-1749489768978": {
+        "hours": 22.630974549969007,
+        "jira_direct": 5.0,
+        "ai_semantic": 14.75,
+        "proportional_overhead": 2.8809745499689634
+      },
+      "vs-1749489871306": {
+        "hours": 33.51675977653632,
+        "jira_direct": 4.5,
+        "ai_semantic": 24.75,
+        "proportional_overhead": 4.266759776536311
+      }
+    },
+    "stage_breakdown": {
+      "jira_direct": {
+        "count": 154,
+        "hours": 137.25
+      },
+      "ai_semantic": {
+        "count": 277,
+        "hours": 265.5
+      },
+      "proportional": {
+        "count": 1100,
+        "hours": 58.75
+      }
+    }
+  },
+  "coverage": 100.0,
+  "total_allocations": 1531
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Check localStorage - QBR Conversations</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 { color: #333; }
+        pre {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        button {
+            padding: 12px 24px;
+            font-size: 14px;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            background: #007bff;
+            color: white;
+        }
+        button:hover { background: #0056b3; }
+        .export-btn { background: #28a745; }
+        .export-btn:hover { background: #218838; }
+        .success { background: #d4edda; color: #155724; padding: 15px; border-radius: 4px; margin: 10px 0; }
+        .warning { background: #fff3cd; color: #856404; padding: 15px; border-radius: 4px; margin: 10px 0; }
+        .error { background: #f8d7da; color: #721c24; padding: 15px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 localStorage Scanner - Find ALL Data</h1>
+        <p>This will scan your entire localStorage and export everything</p>
+        
+        <div id="status"></div>
+        
+        <div style="margin: 20px 0;">
+            <button onclick="scanAll()">🔄 Scan ALL localStorage</button>
+            <button onclick="exportAll()" class="export-btn">📥 Export EVERYTHING</button>
+        </div>
+        
+        <div id="output"></div>
+    </div>
+
+    <script>
+        function scanAll() {
+            console.log('=== SCANNING ALL LOCALSTORAGE ===');
+            
+            if (typeof(Storage) === "undefined") {
+                document.getElementById('status').innerHTML = '<div class="error">localStorage not supported</div>';
+                return;
+            }
+            
+            const total = localStorage.length;
+            
+            if (total === 0) {
+                document.getElementById('status').innerHTML = '<div class="warning">⚠️ localStorage is EMPTY - no data found</div>';
+                document.getElementById('output').innerHTML = '<p>Try opening this page from your actual app at <strong>http://localhost:5173</strong></p>';
+                return;
+            }
+            
+            // Find all keys
+            let allData = [];
+            let conversationKeys = [];
+            
+            for (let i = 0; i < total; i++) {
+                const key = localStorage.key(i);
+                const value = localStorage.getItem(key);
+                const size = value ? value.length : 0;
+                
+                allData.push({
+                    key: key,
+                    size: size,
+                    preview: value.substring(0, 150)
+                });
+                
+                // Look for conversation data
+                if (value && (value.includes('"messages"') || value.includes('"conversation') || key.toLowerCase().includes('qbr') || key.toLowerCase().includes('conv'))) {
+                    conversationKeys.push(key);
+                }
+            }
+            
+            // Display results
+            if (conversationKeys.length > 0) {
+                document.getElementById('status').innerHTML = `
+                    <div class="success">
+                        <strong>🎯 FOUND ${conversationKeys.length} potential conversation key(s)!</strong><br>
+                        Keys: ${conversationKeys.join(', ')}<br>
+                        Total items in localStorage: ${total}
+                    </div>
+                `;
+            } else {
+                document.getElementById('status').innerHTML = `
+                    <div class="warning">
+                        <strong>⚠️ No obvious conversation data found</strong><br>
+                        But found ${total} items total - check the list below
+                    </div>
+                `;
+            }
+            
+            // Show all keys
+            let output = '<h3>All localStorage Items:</h3>';
+            allData.forEach(item => {
+                output += `
+                    <div style="border: 1px solid #ddd; padding: 10px; margin: 10px 0; border-radius: 4px;">
+                        <strong>Key:</strong> ${item.key}<br>
+                        <strong>Size:</strong> ${item.size} characters<br>
+                        <strong>Preview:</strong><br>
+                        <pre style="max-height: 100px;">${item.preview}...</pre>
+                    </div>
+                `;
+            });
+            
+            document.getElementById('output').innerHTML = output;
+        }
+        
+        function exportAll() {
+            if (localStorage.length === 0) {
+                alert('No data to export');
+                return;
+            }
+            
+            // Export EVERYTHING
+            const allData = {};
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                allData[key] = localStorage.getItem(key);
+            }
+            
+            const backup = {
+                exportDate: new Date().toISOString(),
+                domain: window.location.href,
+                itemCount: localStorage.length,
+                data: allData
+            };
+            
+            const jsonString = JSON.stringify(backup, null, 2);
+            const blob = new Blob([jsonString], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `ALL-LOCALSTORAGE-${new Date().toISOString().split('T')[0]}.json`;
+            link.click();
+            URL.revokeObjectURL(url);
+            
+            alert(`✅ Exported ${localStorage.length} items!`);
+        }
+        
+        // Auto-scan on load
+        scanAll();
+    </script>
+</body>
+</html>

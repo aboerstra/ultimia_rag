@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Conversation Export</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .success { color: green; }
+        .info { color: blue; }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversation Backup Test</h1>
+    
+    <div>
+        <h2>Current Storage Status</h2>
+        <div id="status"></div>
+    </div>
+    
+    <div>
+        <h2>Actions</h2>
+        <button onclick="exportBackup()">📥 Export Conversations to JSON</button>
+        <button onclick="showConversations()">👁️ View Conversations</button>
+    </div>
+    
+    <div id="output"></div>
+
+    <script>
+        const STORAGE_KEY = 'qbr_conversations';
+        
+        function checkStatus() {
+            const stored = localStorage.getItem(STORAGE_KEY);
+            const conversations = stored ? JSON.parse(stored) : [];
+            
+            const statusDiv = document.getElementById('status');
+            statusDiv.innerHTML = `
+                <p class="info"><strong>✅ Found ${conversations.length} conversations in localStorage</strong></p>
+                <p>Total messages: ${conversations.reduce((sum, c) => sum + c.messages.length, 0)}</p>
+            `;
+        }
+        
+        function exportBackup() {
+            const stored = localStorage.getItem(STORAGE_KEY);
+            const conversations = stored ? JSON.parse(stored) : [];
+            
+            if (conversations.length === 0) {
+                alert('No conversations to export');
+                return;
+            }
+            
+            const backup = {
+                exportDate: new Date().toISOString(),
+                version: '1.0',
+                conversationCount: conversations.length,
+                conversations: conversations
+            };
+            
+            const jsonString = JSON.stringify(backup, null, 2);
+            const blob = new Blob([jsonString], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `qbr-conversations-backup-${new Date().toISOString().split('T')[0]}.json`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+            
+            document.getElementById('output').innerHTML = `
+                <p class="success"><strong>✅ Exported ${conversations.length} conversations!</strong></p>
+                <p>Check your Downloads folder for the JSON file.</p>
+            `;
+        }
+        
+        function showConversations() {
+            const stored = localStorage.getItem(STORAGE_KEY);
+            const conversations = stored ? JSON.parse(stored) : [];
+            
+            const output = document.getElementById('output');
+            output.innerHTML = `
+                <h3>Conversations (${conversations.length})</h3>
+                <pre>${JSON.stringify(conversations.slice(0, 3), null, 2)}</pre>
+                ${conversations.length > 3 ? '<p><em>...showing first 3 conversations</em></p>' : ''}
+            `;
+        }
+        
+        // Check status on load
+        checkStatus();
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+{
+  "date": "Unknown",
+  "attendees": [
+    "Laura Dolphin",
+    "Adrian Boerstra"
+  ],
+  "summary": "Discussion focused on creating a roadmap presentation for Michael, specifically around Salesforce implementation work and value streams. The team needed to organize work items and estimates into a calendar view with different phases and associated costs.",
+  "key_topics": [
+    "Roadmap presentation structure",
+    "Value streams organization",
+    "Time tracking implementation",
+    "Data model implementation",
+    "Application intake automation"
+  ],
+  "decisions": [
+    "Organize roadmap by value streams (application intake, credit, documentation, funding, broker relations, etc.)",
+    "Structure presentation with calendar view showing phases and milestones",
+    "Include time tracking implementation in July"
+  ],
+  "action_items": [
+    "Create roadmap presentation for meeting in 1.5 hours",
+    "Add time estimates and costs for initial phase",
+    "Map out initiatives across value streams"
+  ],
+  "concerns": [
+    "Limited time to prepare roadmap (meeting in 1.5 hours)",
+    "Incomplete estimates beyond initial phase",
+    "Need for better definition of time tracking requirements"
+  ],
+  "michael_priorities": [
+    "Wants to see calendar view of phases and milestones",
+    "Needs cost estimates for budgeting purposes",
+    "Interested in actual Salesforce work items rather than high-level executive goals"
+  ],
+  "commitments": [
+    "Will create roadmap showing phases and associated costs",
+    "Will provide estimates for initial 2-3 months of work",
+    "Will map out high-level activities for full year"
+  ],
+  "filename": "20-MK-LD.pdf",
+  "metadata": {
+    "number": "20",
+    "attendees": [
+      "Michael Kianmahd",
+      "Laura Dolphin"
+    ],
+    "attendee_initials": [
+      "MK",
+      "LD"
+    ],
+    "filename": "20-MK-LD.pdf"
+  }
+}

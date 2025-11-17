@@ -1,0 +1,59 @@
+{
+  "date": "Unknown",
+  "attendees": [
+    "Michael Kianmahd",
+    "Charles Salanga",
+    "Kaleb Dague",
+    "Laura",
+    "Adrian Boerstra"
+  ],
+  "summary": "The meeting covered two main topics: an issue with the intake tool validation and a proposal for implementing value streams and governance structure based on the Entrepreneurial Operating System (EOS). Adrian presented a detailed framework for running steering committee meetings using the EOS Level 10 meeting format.",
+  "key_topics": [
+    "Intake tool validation issues",
+    "Value streams implementation",
+    "EOS governance structure",
+    "Steering committee meeting format",
+    "Scorecard metrics system"
+  ],
+  "decisions": [
+    "Laura to handle intake tool validation issues in a separate meeting",
+    "Agreement to implement EOS-based meeting structure for steering committee"
+  ],
+  "action_items": [
+    {
+      "owner": "Laura",
+      "task": "Schedule follow-up meeting with Jay, Charles, and Louis regarding intake tool issues"
+    },
+    {
+      "owner": "Team",
+      "task": "Establish metrics for each value stream"
+    }
+  ],
+  "concerns": [
+    "Intake tool validations not working properly",
+    "QC time increasing due to validation bypass",
+    "Need for better alignment between metrics and business goals"
+  ],
+  "michael_priorities": [
+    "Reducing need for pull approach to get people involved",
+    "Having team members take ownership of performance metrics",
+    "Wanting solutions to be driven by team members"
+  ],
+  "commitments": [
+    "Laura to follow up within 20 minutes after meeting",
+    "Adrian to help implement EOS structure without need for external implementers"
+  ],
+  "filename": "19-MK-LD.pdf",
+  "metadata": {
+    "number": "19",
+    "attendees": [
+      "Michael Kianmahd",
+      "Laura Dolphin"
+    ],
+    "attendee_initials": [
+      "MK",
+      "LD"
+    ],
+    "filename": "19-MK-LD.pdf"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "date": "Unknown",
+  "attendees": [
+    "Laura Dolphin",
+    "Lyndon Elam",
+    "Michael Kianmahd"
+  ],
+  "summary": "Discussion focused on how to handle direct deals in Salesforce, particularly those involving Fernando who works for Maxim but sometimes acts as a referral source. The team discussed validation rules and proper way to structure deal intake automation when there is no broker involved.",
+  "key_topics": [
+    "Time tracking and billing updates",
+    "Direct deals handling in Salesforce",
+    "Currency Capital broker relationship",
+    "Fernando's role as referral source"
+  ],
+  "decisions": [
+    "Direct deals should skip broker section in intake process",
+    "Fernando doesn't need to be referral source contact for direct deals",
+    "Issue is priority level 3"
+  ],
+  "action_items": [
+    "Laura to review validation rules structure",
+    "Need to determine best practice for differentiating direct customer applications in Salesforce"
+  ],
+  "concerns": [
+    "Current validation rules preventing deals without brokers",
+    "Potential long-term data issues from current workarounds",
+    "System not built for direct deals"
+  ],
+  "michael_priorities": [
+    "Wants flexibility to enter deals without brokers",
+    "Needs clear way to tag Maxim source leads/accounts/opportunities",
+    "Emphasized this is a priority level 3 issue"
+  ],
+  "commitments": [
+    "Laura will handle any additional overage bills through end of October",
+    "Laura will investigate proper restructuring of deal intake automation"
+  ],
+  "filename": "06-MK-LD-LE.pdf",
+  "metadata": {
+    "number": "06",
+    "attendees": [
+      "Michael Kianmahd",
+      "Laura Dolphin",
+      "Lyndon Elam"
+    ],
+    "attendee_initials": [
+      "MK",
+      "LD",
+      "LE"
+    ],
+    "filename": "06-MK-LD-LE.pdf"
+  }
+}

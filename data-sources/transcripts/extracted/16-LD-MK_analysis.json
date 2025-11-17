@@ -1,0 +1,56 @@
+{
+  "date": "Unknown",
+  "attendees": [
+    "Laura",
+    "Michael Kianmahd",
+    "Cory Gambello"
+  ],
+  "summary": "Meeting focused on discussing Plotty duplicate management software pricing and implementation, as well as industry classification for scoring models. The team reviewed specific industry categories needed for scoring different types of equipment and businesses. Discussion included detailed breakdown of transportation subcategories and scoring model considerations.",
+  "key_topics": [
+    "Plotty duplicate management software pricing ($4300/year)",
+    "Industry classification system",
+    "Scoring models for different industries",
+    "Transportation subcategories (OTR vs vocational)",
+    "Account classification requirements"
+  ],
+  "decisions": [
+    "Proceed with Plotty implementation due to Laura's familiarity and efficiency",
+    "Include 6 main industry categories: over-the-road trucking, vocational trucking, construction, agricultural, real estate, and other",
+    "Change terminology from 'industry' to 'industry scorecard'"
+  ],
+  "action_items": [
+    "Laura to introduce Michael to Anu regarding Plotty",
+    "Laura to add industry classification question to steering committee agenda",
+    "Laura meeting with Ross tomorrow about resourcing",
+    "Tuesday call scheduled to discuss resourcing and project planning"
+  ],
+  "concerns": [
+    "Current dupe catcher software is inadequate",
+    "Need to avoid buying software that won't be fully utilized",
+    "Undefined vocational subtypes need further definition"
+  ],
+  "michael_priorities": [
+    "Ensuring software purchases are fully utilized",
+    "Accurate industry classification for scoring models",
+    "Clear naming conventions to avoid confusion",
+    "Prioritizing dupe catching solution due to complaints"
+  ],
+  "commitments": [
+    "Laura committed to implementing Plotty effectively",
+    "Michael committed to reviewing Plotty pricing and moving forward",
+    "Team to further define vocational subtypes"
+  ],
+  "filename": "16-LD-MK.pdf",
+  "metadata": {
+    "number": "16",
+    "attendees": [
+      "Laura Dolphin",
+      "Michael Kianmahd"
+    ],
+    "attendee_initials": [
+      "LD",
+      "MK"
+    ],
+    "filename": "16-LD-MK.pdf"
+  }
+}

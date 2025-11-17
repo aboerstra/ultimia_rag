@@ -1,0 +1,55 @@
+{
+  "date": "Unknown",
+  "attendees": [
+    "Laura Dolphin",
+    "Michael Kianmahd",
+    "Lyndon Elam"
+  ],
+  "summary": "Meeting focused on project timelines and coordination between teams, particularly regarding a pricing tool integration. Discussion centered around blockers with Kin team and the need for sandbox connection testing. The team also addressed communication protocols and visibility into timeline-related matters.",
+  "key_topics": [
+    "Pricing tool integration status",
+    "Randall Riley API issues",
+    "Team communication protocols",
+    "GitHub updates",
+    "Meeting schedule adjustments"
+  ],
+  "decisions": [
+    "Timeline discussions should be moved from Slack to email for better visibility",
+    "Lyndon should be copied on Kin team interactions regarding timelines",
+    "Tomorrow's meeting time may be adjusted by 30 minutes pending confirmation"
+  ],
+  "action_items": [
+    "Laura to update GitHub documentation for tomorrow's meeting",
+    "Laura to raise pricing tool timeline concerns in tomorrow's call with Carlos and Martin",
+    "Laura to coordinate new meeting time with Carlos, Martin, and Christian",
+    "Laura to follow up on sandbox connection to pricing tool"
+  ],
+  "concerns": [
+    "Potential delay in pricing tool integration testing",
+    "Randall Riley API issues affecting credit team operations",
+    "Timeline visibility across teams"
+  ],
+  "michael_priorities": [
+    "GitHub documentation updates",
+    "Notion dates being updated",
+    "Time tracking updates"
+  ],
+  "commitments": [
+    "Laura committed to having GitHub documentation ready by tomorrow",
+    "Laura will update team if pricing tool integration becomes a serious blocker",
+    "Lyndon committed to communicating with Kin team about timelines"
+  ],
+  "filename": "08-MK-LD.pdf",
+  "metadata": {
+    "number": "08",
+    "attendees": [
+      "Michael Kianmahd",
+      "Laura Dolphin"
+    ],
+    "attendee_initials": [
+      "MK",
+      "LD"
+    ],
+    "filename": "08-MK-LD.pdf"
+  }
+}

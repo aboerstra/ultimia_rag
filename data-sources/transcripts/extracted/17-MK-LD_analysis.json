@@ -1,0 +1,51 @@
+{
+  "date": "Unknown",
+  "attendees": [
+    "Michael Kianmahd",
+    "Adrian Boerstra",
+    "Laura"
+  ],
+  "summary": "The meeting focused on orienting Michael to a new project planning tool that shows value streams, resource allocation, and project timelines. The tool allows visualization and adjustment of project timelines and resource requirements. The discussion began with casual conversation about AI avatars and travel before moving to the business agenda.",
+  "key_topics": [
+    "Introduction to new project planning tool functionality",
+    "Value streams and project organization",
+    "Resource allocation visualization",
+    "T-shirt sizing estimation methodology",
+    "Project timeline management"
+  ],
+  "decisions": [
+    "To review current projects only, filtering out completed work",
+    "To use t-shirt sizing for initial estimates with understanding they are approximate"
+  ],
+  "action_items": [
+    "Add differentiation between t-shirt sized vs fully scoped projects in the tool",
+    "Review and validate projects within each value stream",
+    "Add maintenance project category for Salesforce activities"
+  ],
+  "concerns": [
+    "Screen visibility/readability of the tool",
+    "Accuracy of t-shirt sizing estimates vs actual hours needed"
+  ],
+  "michael_priorities": [
+    "Understanding how to provide most effective feedback",
+    "Clarification on how to review the information presented",
+    "Visibility and readability of the tool interface"
+  ],
+  "commitments": [
+    "Team will update tool to distinguish between t-shirt sized and fully scoped projects",
+    "Will review each value stream individually for validation"
+  ],
+  "filename": "17-MK-LD.pdf",
+  "metadata": {
+    "number": "17",
+    "attendees": [
+      "Michael Kianmahd",
+      "Laura Dolphin"
+    ],
+    "attendee_initials": [
+      "MK",
+      "LD"
+    ],
+    "filename": "17-MK-LD.pdf"
+  }
+}

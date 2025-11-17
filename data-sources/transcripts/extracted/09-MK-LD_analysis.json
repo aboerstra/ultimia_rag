@@ -1,0 +1,36 @@
+{
+  "date": "Unknown",
+  "attendees": [
+    "Michael Kianmahd",
+    "Kaleb Dague",
+    "Lyndon Elam",
+    "Laura Dolphin"
+  ],
+  "summary": "This appears to be the start of a planning meeting between Maxim and Faye teams. The transcript shows only the initial introductions and transition to a Zoom call, with minimal substantive discussion.",
+  "key_topics": [
+    "Team introductions",
+    "Meeting setup"
+  ],
+  "decisions": [],
+  "action_items": [
+    "Join Zoom call using link shared in chat"
+  ],
+  "concerns": [],
+  "michael_priorities": [
+    "Getting the team onto the Zoom call"
+  ],
+  "commitments": [],
+  "filename": "09-MK-LD.pdf",
+  "metadata": {
+    "number": "09",
+    "attendees": [
+      "Michael Kianmahd",
+      "Laura Dolphin"
+    ],
+    "attendee_initials": [
+      "MK",
+      "LD"
+    ],
+    "filename": "09-MK-LD.pdf"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "date": "Unknown",
+  "attendees": [
+    "Michael Kianmahd",
+    "Cory Gambello",
+    "Laura"
+  ],
+  "summary": "Meeting focused on business goals and growth targets for Maxim. Discussion included current funding levels, future funding targets, and technology improvements. Team also discussed 8x8 system access and upcoming projects.",
+  "key_topics": [
+    "8x8 system access and administration",
+    "Business growth targets",
+    "Funding volume goals",
+    "Market segments and addressable market",
+    "Sales organization development",
+    "Technology improvements"
+  ],
+  "decisions": [
+    "Laura to get administrative access to 8x8 system",
+    "Targeting $5M/month funding by end of 2025",
+    "Targeting $7M/month funding by 2026",
+    "Targeting $10M/month funding by 2027"
+  ],
+  "action_items": [
+    "Michael to provide Laura with 8x8 system access",
+    "Laura to set up 8x8 access after returning from holiday",
+    "Michael to share detailed business goals via email",
+    "Faye to send lunch to the office (playful commitment)"
+  ],
+  "concerns": [
+    "Recent crash in funding volumes",
+    "Delay in building out sales organization until operations are optimized",
+    "Uncertainty about hitting 51M target due to market conditions"
+  ],
+  "michael_priorities": [
+    "Growing balance sheet",
+    "Reaching funding targets",
+    "Ensuring technology and models are properly configured",
+    "Maintaining efficient operations",
+    "Building sales organization after operations are optimized"
+  ],
+  "commitments": [
+    "Achieve $5M/month funding by end of 2025",
+    "Reach $7M/month funding by 2026",
+    "Hit $10M/month funding by 2027",
+    "Focus on process improvements and technology optimization"
+  ],
+  "filename": "21-MK-LD.pdf",
+  "metadata": {
+    "number": "21",
+    "attendees": [
+      "Michael Kianmahd",
+      "Laura Dolphin"
+    ],
+    "attendee_initials": [
+      "MK",
+      "LD"
+    ],
+    "filename": "21-MK-LD.pdf"
+  }
+}

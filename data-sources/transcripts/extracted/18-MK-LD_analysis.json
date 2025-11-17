@@ -1,0 +1,56 @@
+{
+  "date": "Unknown",
+  "attendees": [
+    "Adrian Boerstra",
+    "Laura Dolphin"
+  ],
+  "summary": "Discussion about a new roadmap planning tool developed by Adrian that allows visualization of projects, milestones, and resource allocation. The tool integrates with Asana and helps plan project timelines while tracking resource hours per month. Laura needs this for a Thursday meeting with Michael to show project completion timelines.",
+  "key_topics": [
+    "New roadmap planning tool functionality",
+    "Asana integration capabilities",
+    "Resource hour tracking and visualization",
+    "Project timeline planning"
+  ],
+  "decisions": [
+    "Tool will be used as internal planning aid, not shared directly with Michael",
+    "Will focus on hours and completion dates rather than resource allocation details for Michael"
+  ],
+  "action_items": [
+    {
+      "owner": "Adrian",
+      "task": "Get tool hosted on a webpage instead of localhost"
+    },
+    {
+      "owner": "Laura",
+      "task": "Prepare timeline visualization for Thursday meeting with Michael"
+    }
+  ],
+  "concerns": [
+    "Tool currently only works on localhost",
+    "Data is stored in browser cache, not persistent",
+    "Need to avoid detailed resource allocation discussion with Michael"
+  ],
+  "michael_priorities": [
+    "Completion timeline for core goals",
+    "Merging Brntl",
+    "New scoring models",
+    "Wants to know when goals will be completed based on resource allocation"
+  ],
+  "commitments": [
+    "Laura will prepare project timelines by Thursday",
+    "Adrian will support Laura in using the tool for planning"
+  ],
+  "filename": "18-MK-LD.pdf",
+  "metadata": {
+    "number": "18",
+    "attendees": [
+      "Michael Kianmahd",
+      "Laura Dolphin"
+    ],
+    "attendee_initials": [
+      "MK",
+      "LD"
+    ],
+    "filename": "18-MK-LD.pdf"
+  }
+}

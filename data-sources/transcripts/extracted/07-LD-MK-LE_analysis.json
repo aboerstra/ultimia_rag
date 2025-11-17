@@ -1,0 +1,61 @@
+{
+  "date": "Unknown",
+  "attendees": [
+    "Laura Dolphin",
+    "Michael Kianmahd",
+    "Lyndon Elam"
+  ],
+  "summary": "Meeting focused on project timelines and coordination between Maxim and Faye teams. Discussion centered around sandbox connection to the pricing tool and integration testing needs. Key emphasis was placed on communication protocols and visibility into timeline-related matters.",
+  "key_topics": [
+    "Pricing tool sandbox connection and testing",
+    "Randall Riley API issue",
+    "Communication protocols between teams",
+    "GitHub updates",
+    "Meeting schedule adjustments"
+  ],
+  "decisions": [
+    "Timeline-related communications should be moved from Slack to email for better visibility",
+    "Tomorrow's meeting will be used to update Notion dates and time tracking"
+  ],
+  "action_items": [
+    {
+      "owner": "Laura",
+      "task": "Update GitHub documentation",
+      "due": "Tomorrow or later today"
+    },
+    {
+      "owner": "Laura",
+      "task": "Check with Carlos, Martin and Christian about pushing meeting time up 30 minutes"
+    }
+  ],
+  "concerns": [
+    "Sandbox connection to pricing tool pending - potential blocker",
+    "Randall Riley API issue affecting credit team operations",
+    "Laura experiencing computer issues with support"
+  ],
+  "michael_priorities": [
+    "GitHub documentation updates",
+    "Notion dates being updated",
+    "Time tracking updates"
+  ],
+  "commitments": [
+    "Laura will raise pricing tool timeline concerns in tomorrow's call with Carlos and Martin",
+    "Laura will complete GitHub updates by tomorrow",
+    "Lynn will be included on important timeline communications"
+  ],
+  "filename": "07-LD-MK-LE.pdf",
+  "metadata": {
+    "number": "07",
+    "attendees": [
+      "Laura Dolphin",
+      "Michael Kianmahd",
+      "Lyndon Elam"
+    ],
+    "attendee_initials": [
+      "LD",
+      "MK",
+      "LE"
+    ],
+    "filename": "07-LD-MK-LE.pdf"
+  }
+}

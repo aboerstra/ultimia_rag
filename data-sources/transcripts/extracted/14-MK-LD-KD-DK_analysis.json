@@ -1,0 +1,59 @@
+{
+  "date": "Unknown",
+  "attendees": [
+    "Michael Kianmahd",
+    "Kaleb Dague",
+    "Laura",
+    "Dave Kaplan",
+    "Christian Luker"
+  ],
+  "summary": "The meeting covered two main segments: first, a quick discussion about licensing updates with Christian, followed by a detailed review of resource allocation and project timeline planning. Kaleb presented pricing options for different engagement levels while Laura demonstrated project timeline constraints using a planning tool.",
+  "key_topics": [
+    "Conga licensing amendment through December",
+    "Current engagement review (90 hours per quarter)",
+    "Resource allocation planning (130 hours/month)",
+    "Pricing options for semi-annual vs annual commitments",
+    "Project timeline planning"
+  ],
+  "decisions": [
+    "Agreement to proceed with Conga licensing amendment until December",
+    "Proposed allocation of 130 total hours per month across different resource levels"
+  ],
+  "action_items": [
+    "Christian to send updated contract for licensing",
+    "Kaleb to update total number calculations in presentation",
+    "Laura to refine project timeline to meet 130 hour/month constraint"
+  ],
+  "concerns": [
+    "Current timeline not realistic for completing certain projects by end of July",
+    "Resource constraints with Laura's availability",
+    "Multiple team member involvement causing timeline extensions"
+  ],
+  "michael_priorities": [
+    "Wanted to understand what will be achieved in the timeline",
+    "Focused on value delivery rather than just hours",
+    "Concerned about achieving set objectives"
+  ],
+  "commitments": [
+    "Laura will remain point person for meetings and support",
+    "Team will provide 130 hours per month of combined resources",
+    "Senior consultants (Laura and Adrian) to provide 60 hours each per month"
+  ],
+  "filename": "14-MK-LD-KD-DK.pdf",
+  "metadata": {
+    "number": "14",
+    "attendees": [
+      "Michael Kianmahd",
+      "Laura Dolphin",
+      "Kaleb Dague",
+      "Dave Kaplan"
+    ],
+    "attendee_initials": [
+      "MK",
+      "LD",
+      "KD",
+      "DK"
+    ],
+    "filename": "14-MK-LD-KD-DK.pdf"
+  }
+}

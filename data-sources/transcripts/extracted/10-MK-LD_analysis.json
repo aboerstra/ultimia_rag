@@ -1,0 +1,54 @@
+{
+  "date": "Unknown",
+  "attendees": [
+    "Michael Kianmahd",
+    "Laura Dolphin"
+  ],
+  "summary": "Discussion focused on setting up system access for the new COO starting next week and managing project resources. They discussed access levels in Salesforce and related systems, as well as how to handle ongoing document management work.",
+  "key_topics": [
+    "New COO system access setup",
+    "COO background and experience",
+    "Resource allocation for document management project",
+    "Data model implementation timing"
+  ],
+  "decisions": [
+    "COO to get full access except system administration in production",
+    "COO to have sandbox access for testing",
+    "Initial 30-minute meeting scheduled for September 11th",
+    "Current documents will be used while waiting for new COO input"
+  ],
+  "action_items": [
+    "Laura to set up system access for COO this week",
+    "Laura to find alternative work for the consultant's 40 hours",
+    "Initial meeting with COO scheduled for September 11th"
+  ],
+  "concerns": [
+    "Risk of overwhelming new COO with too much information",
+    "Potential delay in data model implementation",
+    "Resource utilization of 40 allocated consultant hours"
+  ],
+  "michael_priorities": [
+    "Getting new COO onboarded effectively",
+    "Ensuring COO has appropriate system access",
+    "Maintaining progress on data model implementation",
+    "Having COO review processes with fresh eyes"
+  ],
+  "commitments": [
+    "Laura will set up COO's access before Monday start date",
+    "Laura will be available for COO orientation despite family visiting",
+    "Team will continue work on current documentation while waiting for COO input"
+  ],
+  "filename": "10-MK-LD.pdf",
+  "metadata": {
+    "number": "10",
+    "attendees": [
+      "Michael Kianmahd",
+      "Laura Dolphin"
+    ],
+    "attendee_initials": [
+      "MK",
+      "LD"
+    ],
+    "filename": "10-MK-LD.pdf"
+  }
+}

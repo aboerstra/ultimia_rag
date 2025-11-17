@@ -1,0 +1,56 @@
+{
+  "date": "Unknown",
+  "attendees": [
+    "Laura Dolphin",
+    "Adrian Boerstra"
+  ],
+  "summary": "Meeting focused on developing a technology roadmap for Maxim by identifying key milestones and business objectives. Discussion centered around mapping technical initiatives to higher-level business goals and prioritizing based on business impact. The team worked on whiteboarding both technical markers and their corresponding business objectives.",
+  "key_topics": [
+    "One-click contract functionality",
+    "E-Notary implementation",
+    "Automated document management",
+    "Industry-specific scoring models",
+    "Staff accountability and measurements",
+    "Approval processes",
+    "Marketing and communications automation",
+    "Business goals alignment"
+  ],
+  "decisions": [
+    "Structured roadmap items into technical initiatives and business objectives",
+    "Decided to frame initiatives in context of larger business goals"
+  ],
+  "action_items": [
+    "Map technical initiatives to business objectives",
+    "Define specific measurable goals for revenue increases",
+    "Detail implementation requirements for each initiative"
+  ],
+  "concerns": [
+    "Need to better understand specific revenue targets",
+    "Current manual processing in Columbia team",
+    "Employee retention and measurement challenges"
+  ],
+  "michael_priorities": [
+    "Increase revenue",
+    "Reduce losses from bad deals",
+    "Improve employee retention",
+    "Modernize processes for team morale",
+    "More accurate scoring of deals"
+  ],
+  "commitments": [
+    "Create comprehensive roadmap with business impact alignment",
+    "Focus on initiatives that provide measurable business value"
+  ],
+  "filename": "22-LD-AB.pdf",
+  "metadata": {
+    "number": "22",
+    "attendees": [
+      "Laura Dolphin",
+      "Adrian Boerstra"
+    ],
+    "attendee_initials": [
+      "LD",
+      "AB"
+    ],
+    "filename": "22-LD-AB.pdf"
+  }
+}

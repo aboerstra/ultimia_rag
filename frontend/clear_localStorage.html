@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clear Conversations from localStorage</title>
+</head>
+<body>
+    <h1>Clear Old Conversations</h1>
+    <button onclick="clearConversations()">Clear localStorage Conversations</button>
+    <pre id="output"></pre>
+    
+    <script>
+        function clearConversations() {
+            const output = document.getElementById('output');
+            
+            // Check what's there first
+            const stored = localStorage.getItem('qbr_conversations');
+            if (stored) {
+                const convs = JSON.parse(stored);
+                output.textContent = `Found ${convs.length} conversations in localStorage\n\n`;
+            } else {
+                output.textContent = 'No conversations in localStorage\n\n';
+            }
+            
+            // Clear them
+            localStorage.removeItem('qbr_conversations');
+            output.textContent += '✅ Cleared qbr_conversations from localStorage\n';
+            output.textContent += '\nNow only the database will be used!\n';
+            output.textContent += '\nRefresh your app to see database-only conversations.';
+        }
+        
+        // Auto-run on load
+        window.onload = () => {
+            clearConversations();
+        };
+    </script>
+</body>
+</html>

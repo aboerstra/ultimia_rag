@@ -1,0 +1,57 @@
+{
+  "date": "Unknown",
+  "attendees": [
+    "Laura Dolphin",
+    "Michael Kianmahd",
+    "Charles Salanga",
+    "Lyndon",
+    "Juan Guevara"
+  ],
+  "summary": "The team discussed UCC filing processes and how they should be tracked in Salesforce. The main focus was on unifying business processes around UCC filings and addressing current tracking limitations. There was detailed discussion about when UCC filings occur, their relationship to liens, and how they relate to different deal stages.",
+  "key_topics": [
+    "UCC filing tracking in Salesforce",
+    "UCC filing process standardization",
+    "Title status vs UCC filing distinction",
+    "UCC filing expiration and termination tracking"
+  ],
+  "decisions": [
+    "UCC filings will be tracked at the opportunity level rather than collateral level",
+    "UCC filings will be required for all commercial loans, not just non-titled items"
+  ],
+  "action_items": [
+    "Need to implement tracking for UCC filing expirations",
+    "Need to implement tracking for UCC terminations",
+    "Remove UCC filing from vehicle title status dropdown (identified as bad data)"
+  ],
+  "concerns": [
+    "Current UCC tracking in Salesforce is not proper or clean",
+    "No current tracking of UCC filing expirations (5-year term)",
+    "No current tracking of UCC terminations",
+    "Bad data structure with UCC filing status in vehicle title dropdown"
+  ],
+  "michael_priorities": [
+    "Unifying business processes",
+    "Proper tracking of UCC filings in Salesforce",
+    "Tracking expirations and terminations",
+    "Fixing improper data structure"
+  ],
+  "commitments": [
+    "Charles committed to leaving at 10:45 for physical therapy",
+    "Team committed to implementing proper UCC tracking at opportunity level"
+  ],
+  "filename": "03-MK-LD-LE.pdf",
+  "metadata": {
+    "number": "03",
+    "attendees": [
+      "Michael Kianmahd",
+      "Laura Dolphin",
+      "Lyndon Elam"
+    ],
+    "attendee_initials": [
+      "MK",
+      "LD",
+      "LE"
+    ],
+    "filename": "03-MK-LD-LE.pdf"
+  }
+}

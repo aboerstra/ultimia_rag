@@ -1,0 +1,973 @@
+{
+  "projects": [
+    {
+      "id": "asana-1210391095918640",
+      "name": "AI Based Application Intake",
+      "description": "",
+      "valueStreamId": "vs-1749489636255",
+      "startDate": "2025-06-05",
+      "endDate": "2025-08-04",
+      "status": "in-progress",
+      "priority": "medium",
+      "progress": 92,
+      "resources": {
+        "rt-1749505590446": {
+          "allocated": 1,
+          "required": 1
+        },
+        "rt-1749505607899": {
+          "allocated": 1,
+          "required": 1
+        },
+        "rt-1749507630265": {
+          "required": 1,
+          "hours": 50
+        }
+      },
+      "milestones": [
+        {
+          "id": "ms-1749505764653",
+          "name": "Begin Beta Testing",
+          "date": "2025-06-26T00:00:00.000Z",
+          "status": "planned"
+        }
+      ],
+      "asanaUrl": "https://app.asana.com/1/1136653049084869/project/1210390640814935/task/1210391095918640",
+      "resourceTypeId": null,
+      "pmAllocation": 20,
+      "autoPopulatePM": false,
+      "estimatedHours": 0,
+      "pmHours": 0,
+      "totalHours": 50,
+      "hoursUsed": 46,
+      "simpleMode": false,
+      "dependencies": []
+    },
+    {
+      "id": "asana-1210391103793000",
+      "name": "Deal Intake Automation",
+      "description": "",
+      "valueStreamId": "vs-1749489636255",
+      "startDate": "2025-03-01T00:00:00.000Z",
+      "endDate": "2025-05-12T00:00:00.000Z",
+      "status": "completed",
+      "priority": "medium",
+      "progress": 143,
+      "resources": {
+        "rt-1749505590446": {
+          "allocated": 1,
+          "required": 1
+        },
+        "rt-1749505607899": {
+          "allocated": 1,
+          "required": 1
+        }
+      },
+      "milestones": [],
+      "asanaUrl": "https://app.asana.com/1/1136653049084869/project/1210390640814935/task/1210391103793000",
+      "resourceTypeId": null,
+      "pmAllocation": 20,
+      "autoPopulatePM": false,
+      "estimatedHours": 0,
+      "pmHours": 0,
+      "totalHours": 28,
+      "hoursUsed": 40,
+      "simpleMode": false,
+      "dependencies": []
+    },
+    {
+      "id": "asana-1210390931454634",
+      "name": "Penske (Partner API)",
+      "description": "",
+      "valueStreamId": "vs-1749489636255",
+      "startDate": "2025-12-16",
+      "endDate": "2026-03-09",
+      "status": "planned",
+      "priority": "low",
+      "progress": 0,
+      "resources": {
+        "rt-1749505607899": {
+          "allocated": 0,
+          "required": 0,
+          "hours": 30
+        },
+        "rt-1749505590446": {
+          "allocated": 0,
+          "required": 0,
+          "hours": 20
+        }
+      },
+      "milestones": [],
+      "asanaUrl": "https://app.asana.com/1/1136653049084869/project/1210390640814935/task/1210390931454634",
+      "resourceTypeId": null,
+      "pmAllocation": 20,
+      "autoPopulatePM": false,
+      "estimatedHours": 0,
+      "pmHours": 0,
+      "totalHours": 50,
+      "hoursUsed": 0,
+      "simpleMode": false,
+      "dependencies": []
+    },
+    {
+      "name": "Ownership & Time Tracking",
+      "description": "",
+      "startDate": "2025-09-07",
+      "endDate": "2025-10-20",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "valueStreamId": "vs-1749489768978",
+      "resources": {
+        "rt-1749505590446": {
+          "allocated": 1,
+          "required": 1,
+          "hours": 30
+        },
+        "rt-1749505607899": {
+          "hours": 10
+        }
+      },
+      "milestones": [],
+      "asanaUrl": "",
+      "id": "proj-1749508892079",
+      "resourceTypeId": null,
+      "pmAllocation": 0,
+      "autoPopulatePM": false,
+      "estimatedHours": 0,
+      "pmHours": 0,
+      "totalHours": 40,
+      "simpleMode": false,
+      "hoursUsed": 0,
+      "dependencies": []
+    },
+    {
+      "name": "Broker Application Process",
+      "description": "",
+      "startDate": "2025-12-23",
+      "endDate": "2026-02-23",
+      "priority": "low",
+      "status": "planned",
+      "progress": 0,
+      "valueStreamId": "vs-1749489787473",
+      "resources": {
+        "rt-1749505590446": {
+          "allocated": 1,
+          "required": 1,
+          "hours": 20
+        },
+        "rt-1749505607899": {
+          "allocated": 1,
+          "required": 1,
+          "hours": 20
+        }
+      },
+      "milestones": [],
+      "asanaUrl": "",
+      "id": "proj-1749508914094",
+      "resourceTypeId": null,
+      "pmAllocation": 20,
+      "autoPopulatePM": false,
+      "estimatedHours": 0,
+      "pmHours": 0,
+      "totalHours": 40,
+      "hoursUsed": 0,
+      "simpleMode": false,
+      "dependencies": []
+    },
+    {
+      "name": "Box Automated Doc Storage",
+      "description": "",
+      "startDate": "2025-08-25",
+      "endDate": "2025-10-23",
+      "priority": "medium",
+      "status": "planned",
+      "progress": 0,
+      "valueStreamId": "vs-1749489871306",
+      "resources": {
+        "rt-1749505590446": {
+          "allocated": 0,
+          "required": 1,
+          "hours": 20
+        },
+        "rt-1749505607899": {
+          "allocated": 0,
+          "required": 1,
+          "hours": 20
+        }
+      },
+      "milestones": [],
+      "asanaUrl": "",
+      "id": "proj-1749509350637",
+      "resourceTypeId": null,
+      "pmAllocation": 20,
+      "autoPopulatePM": false,
+      "estimatedHours": 0,
+      "pmHours": 0,
+      "totalHours": 40,
+      "hoursUsed": 0,
+      "simpleMode": false,
+      "dependencies": []
+    },
+    {
+      "name": "8x8 Phone Integration Discovery",
+      "description": "",
+      "startDate": "2025-09-25",
+      "endDate": "2025-10-12",
+      "priority": "medium",
+      "status": "planned",
+      "progress": 0,
+      "valueStreamId": "vs-1749489768978",
+      "resources": {
+        "rt-1749505590446": {
+          "allocated": 1,
+          "required": 1,
+          "hours": 5
+        },
+        "rt-1749505607899": {
+          "allocated": 0,
+          "required": 0
+        }
+      },
+      "milestones": [],
+      "asanaUrl": "",
+      "id": "proj-1749509392232",
+      "resourceTypeId": null,
+      "pmAllocation": 0,
+      "autoPopulatePM": false,
+      "estimatedHours": 0,
+      "pmHours": 0,
+      "totalHours": 5,
+      "simpleMode": false,
+      "hoursUsed": 0,
+      "dependencies": []
+    },
+    {
+      "name": "Duplicate Management",
+      "description": "",
+      "startDate": "2025-06-15",
+      "endDate": "2025-08-15",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "valueStreamId": "vs-1749489871306",
+      "resources": {
+        "rt-1749505590446": {
+          "allocated": 1,
+          "required": 1,
+          "hours": 40
+        }
+      },
+      "milestones": [],
+      "asanaUrl": "",
+      "pmAllocation": 20,
+      "autoPopulatePM": false,
+      "hoursUsed": 0,
+      "totalHours": 40,
+      "simpleMode": false,
+      "estimatedHours": 0,
+      "pmHours": 0,
+      "id": "proj-1749660644440",
+      "resourceTypeId": null,
+      "dependencies": []
+    },
+    {
+      "name": "Submit Ownership & Time Tracking",
+      "description": "",
+      "startDate": "2025-09-08",
+      "endDate": "2025-11-01",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "valueStreamId": "vs-1749489636255",
+      "resources": {
+        "rt-1749505590446": {
+          "allocated": 1,
+          "required": 1,
+          "hours": 20
+        },
+        "rt-1749505607899": {
+          "allocated": 1,
+          "required": 1,
+          "hours": 10
+        }
+      },
+      "milestones": [],
+      "asanaUrl": "",
+      "pmAllocation": 0,
+      "autoPopulatePM": false,
+      "hoursUsed": 0,
+      "totalHours": 30,
+      "simpleMode": false,
+      "estimatedHours": 0,
+      "pmHours": 0,
+      "id": "proj-1749661102087",
+      "resourceTypeId": null,
+      "dependencies": []
+    },
+    {
+      "name": "SFDC UX Optimization",
+      "description": "",
+      "startDate": "2025-08-24",
+      "endDate": "2025-10-22",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "valueStreamId": "vs-1749489768978",
+      "resources": {
+        "rt-1749505590446": {
+          "allocated": 1,
+          "required": 1,
+          "hours": 30
+        },
+        "rt-1749505607899": {
+          "hours": 10
+        }
+      },
+      "milestones": [],
+      "asanaUrl": "",
+      "pmAllocation": 20,
+      "autoPopulatePM": false,
+      "hoursUsed": 0,
+      "totalHours": 40,
+      "simpleMode": false,
+      "estimatedHours": 0,
+      "pmHours": 0,
+      "id": "proj-1749661288869",
+      "resourceTypeId": null,
+      "dependencies": []
+    },
+    {
+      "name": "AIO Phase 1",
+      "description": "",
+      "startDate": "2024-10-01T00:00:00.000Z",
+      "endDate": "2025-05-05T00:00:00.000Z",
+      "priority": "medium",
+      "status": "completed",
+      "progress": 112,
+      "valueStreamId": "vs-1749489737585",
+      "resources": {
+        "rt-1749505590446": {
+          "allocated": 1,
+          "required": 1
+        },
+        "rt-1749505607899": {
+          "allocated": 0,
+          "required": 0
+        }
+      },
+      "milestones": [],
+      "asanaUrl": "",
+      "id": "proj-1749567603868",
+      "resourceTypeId": null,
+      "pmAllocation": 20,
+      "autoPopulatePM": false,
+      "estimatedHours": 0,
+      "pmHours": 0,
+      "totalHours": 150,
+      "hoursUsed": 168,
+      "simpleMode": false,
+      "dependencies": []
+    },
+    {
+      "name": "AIO Enhancements",
+      "description": "",
+      "startDate": "2025-06-27",
+      "endDate": "2025-09-27",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "valueStreamId": "vs-1749489737585",
+      "resources": {
+        "rt-1749505590446": {
+          "allocated": 1,
+          "required": 1,
+          "hours": 60
+        },
+        "rt-1749505607899": {
+          "allocated": 1,
+          "required": 1,
+          "hours": 30
+        }
+      },
+      "milestones": [],
+      "asanaUrl": "",
+      "id": "proj-1749508625004",
+      "resourceTypeId": null,
+      "pmAllocation": 20,
+      "autoPopulatePM": false,
+      "estimatedHours": 0,
+      "pmHours": 0,
+      "totalHours": 90,
+      "hoursUsed": 0,
+      "simpleMode": false,
+      "dependencies": []
+    },
+    {
+      "name": "Docs - Ownership & Time Tracking",
+      "description": "",
+      "startDate": "2025-09-02",
+      "endDate": "2025-10-21",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "valueStreamId": "vs-1749489737585",
+      "resources": {
+        "rt-1749505590446": {
+          "allocated": 1,
+          "required": 1,
+          "hours": 20
+        },
+        "rt-1749505607899": {
+          "required": 1,
+          "hours": 10
+        }
+      },
+      "milestones": [],
+      "asanaUrl": "",
+      "id": "proj-1749508665660",
+      "resourceTypeId": null,
+      "pmAllocation": 20,
+      "autoPopulatePM": false,
+      "estimatedHours": 0,
+      "pmHours": 0,
+      "totalHours": 30,
+      "hoursUsed": 0,
+      "simpleMode": false,
+      "dependencies": []
+    },
+    {
+      "name": "Funding Ownership & Time Tracking",
+      "description": "",
+      "startDate": "2025-09-02",
+      "endDate": "2025-10-20",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "valueStreamId": "vs-1749489755025",
+      "resources": {
+        "rt-1749505590446": {
+          "allocated": 1,
+          "required": 1,
+          "hours": 20
+        },
+        "rt-1749505607899": {
+          "hours": 10,
+          "required": 1
+        }
+      },
+      "milestones": [],
+      "asanaUrl": "",
+      "pmAllocation": 20,
+      "autoPopulatePM": false,
+      "hoursUsed": 0,
+      "totalHours": 30,
+      "simpleMode": false,
+      "estimatedHours": 0,
+      "pmHours": 0,
+      "id": "proj-1749661671996",
+      "resourceTypeId": null,
+      "dependencies": []
+    },
+    {
+      "name": "e-Notary",
+      "description": "",
+      "startDate": "2025-08-24",
+      "endDate": "2025-10-07",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "valueStreamId": "vs-1749489755025",
+      "resources": {
+        "rt-1749505590446": {
+          "allocated": 1,
+          "required": 1,
+          "hours": 40
+        },
+        "rt-1749505607899": {
+          "hours": 0
+        }
+      },
+      "milestones": [],
+      "asanaUrl": "",
+      "id": "proj-1749508702604",
+      "resourceTypeId": null,
+      "pmAllocation": 20,
+      "autoPopulatePM": false,
+      "estimatedHours": 0,
+      "pmHours": 0,
+      "totalHours": 40,
+      "hoursUsed": 0,
+      "simpleMode": false,
+      "dependencies": []
+    },
+    {
+      "name": "Migrate Users from Classic to Lightning",
+      "description": "",
+      "startDate": "2025-03-01T00:00:00.000Z",
+      "endDate": "2025-04-21T00:00:00.000Z",
+      "priority": "high",
+      "status": "completed",
+      "progress": 100,
+      "valueStreamId": "vs-1749489900284",
+      "resources": {
+        "rt-1749505590446": {
+          "allocated": 1,
+          "required": 1
+        }
+      },
+      "milestones": [],
+      "asanaUrl": "",
+      "id": "proj-1749567446769",
+      "resourceTypeId": null,
+      "pmAllocation": 20,
+      "autoPopulatePM": false,
+      "estimatedHours": 0,
+      "pmHours": 0,
+      "totalHours": 12,
+      "hoursUsed": 12,
+      "simpleMode": false,
+      "dependencies": []
+    },
+    {
+      "name": "Custom Object & Setting Removal- SF",
+      "description": "",
+      "startDate": "2025-04-01T00:00:00.000Z",
+      "endDate": "2025-04-15T00:00:00.000Z",
+      "priority": "medium",
+      "status": "completed",
+      "progress": 100,
+      "valueStreamId": "vs-1749489900284",
+      "resources": {
+        "rt-1749505590446": {
+          "allocated": 1,
+          "required": 1
+        }
+      },
+      "milestones": [
+        {
+          "id": "ms-1749568101756",
+          "name": "Completed Reduction of custom Objects & Settings",
+          "date": "2025-04-14T00:00:00.000Z",
+          "status": "completed"
+        }
+      ],
+      "asanaUrl": "",
+      "id": "proj-1749568117556",
+      "resourceTypeId": null,
+      "pmAllocation": 20,
+      "autoPopulatePM": false,
+      "estimatedHours": 0,
+      "pmHours": 0,
+      "totalHours": 8,
+      "hoursUsed": 8,
+      "simpleMode": false,
+      "dependencies": []
+    },
+    {
+      "name": "Org Clean Up & Prep for new Data Model",
+      "description": "",
+      "startDate": "2025-06-16",
+      "endDate": "2025-07-22",
+      "priority": "medium",
+      "status": "planned",
+      "progress": 0,
+      "valueStreamId": "vs-1749489900284",
+      "resources": {
+        "rt-1749505590446": {
+          "allocated": 1,
+          "required": 1,
+          "hours": 60
+        },
+        "rt-1749505607899": {
+          "hours": 20,
+          "required": 1
+        }
+      },
+      "milestones": [],
+      "asanaUrl": "",
+      "pmAllocation": 0,
+      "autoPopulatePM": false,
+      "hoursUsed": 0,
+      "totalHours": 80,
+      "simpleMode": false,
+      "estimatedHours": 0,
+      "pmHours": 0,
+      "id": "proj-1749661818420",
+      "resourceTypeId": null,
+      "dependencies": []
+    },
+    {
+      "name": "Data Model Refresh",
+      "description": "",
+      "startDate": "2025-06-07",
+      "endDate": "2025-08-13",
+      "priority": "high",
+      "status": "in-progress",
+      "progress": 15,
+      "valueStreamId": "vs-1749489900284",
+      "resources": {
+        "rt-1749505590446": {
+          "allocated": 1,
+          "required": 1,
+          "hours": 100
+        },
+        "rt-1749505607899": {
+          "allocated": 1,
+          "required": 1,
+          "hours": 30
+        }
+      },
+      "milestones": [],
+      "asanaUrl": "",
+      "id": "proj-1749509422675",
+      "resourceTypeId": null,
+      "pmAllocation": 20,
+      "autoPopulatePM": false,
+      "estimatedHours": 0,
+      "pmHours": 0,
+      "totalHours": 130,
+      "hoursUsed": 19,
+      "simpleMode": false,
+      "dependencies": []
+    },
+    {
+      "name": "SFDC Regular Maintentance",
+      "description": "",
+      "startDate": "2025-06-12",
+      "endDate": "2026-06-30",
+      "priority": "medium",
+      "status": "planned",
+      "progress": 0,
+      "valueStreamId": "vs-1749489900284",
+      "resources": {
+        "rt-1749505590446": {
+          "hours": 200
+        }
+      },
+      "milestones": [],
+      "asanaUrl": "",
+      "pmAllocation": 20,
+      "autoPopulatePM": false,
+      "hoursUsed": 0,
+      "totalHours": 200,
+      "simpleMode": false,
+      "estimatedHours": 0,
+      "pmHours": 0,
+      "id": "proj-1749752645508",
+      "resourceTypeId": null,
+      "dependencies": []
+    },
+    {
+      "name": "LeaseWorks Data Integration Discovery",
+      "description": "",
+      "startDate": "2025-09-08",
+      "endDate": "2025-09-12",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "valueStreamId": "vs-1749489768978",
+      "resources": {
+        "rt-1749505590446": {
+          "hours": 8,
+          "required": 1
+        }
+      },
+      "milestones": [],
+      "asanaUrl": "",
+      "pmAllocation": 20,
+      "autoPopulatePM": false,
+      "hoursUsed": 0,
+      "totalHours": 8,
+      "simpleMode": false,
+      "estimatedHours": 0,
+      "pmHours": 0,
+      "id": "proj-1749754758033",
+      "resourceTypeId": null,
+      "dependencies": []
+    },
+    {
+      "name": "Merging TR & BL",
+      "description": "",
+      "startDate": "2025-06-09",
+      "endDate": "2025-08-15",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "valueStreamId": "vs-1749489719651",
+      "resources": {
+        "rt-1749505590446": {
+          "hours": 90
+        },
+        "rt-1749505607899": {
+          "hours": 40
+        }
+      },
+      "milestones": [],
+      "asanaUrl": "",
+      "pmAllocation": 20,
+      "autoPopulatePM": false,
+      "hoursUsed": 0,
+      "totalHours": 130,
+      "simpleMode": false,
+      "estimatedHours": 0,
+      "pmHours": 0,
+      "dependencies": [
+        "asana-1210391095918640"
+      ],
+      "id": "proj-1749766382576"
+    },
+    {
+      "id": "asana-1210391302265436",
+      "name": "Scoring Enhancements (Industries)",
+      "description": "",
+      "valueStreamId": "vs-1749489719651",
+      "startDate": "2025-08-01",
+      "endDate": "2025-09-13",
+      "status": "planned",
+      "priority": "high",
+      "progress": 0,
+      "resources": {
+        "rt-1749505590446": {
+          "allocated": 1,
+          "required": 1,
+          "hours": 12
+        },
+        "rt-1749505607899": {
+          "allocated": 1,
+          "required": 1,
+          "hours": 12
+        }
+      },
+      "milestones": [],
+      "asanaUrl": "https://app.asana.com/1/1136653049084869/project/1210390640814941/task/1210391302265436",
+      "resourceTypeId": null,
+      "pmAllocation": 20,
+      "autoPopulatePM": false,
+      "estimatedHours": 0,
+      "pmHours": 0,
+      "totalHours": 24,
+      "hoursUsed": 0,
+      "simpleMode": false,
+      "dependencies": []
+    },
+    {
+      "id": "asana-1210391302265438",
+      "name": "Automated Approval Processes",
+      "description": "",
+      "valueStreamId": "vs-1749489719651",
+      "startDate": "2025-12-06",
+      "endDate": "2026-03-08",
+      "status": "in-progress",
+      "priority": "low",
+      "progress": 0,
+      "resources": {
+        "rt-1749505590446": {
+          "allocated": 1,
+          "required": 1,
+          "hours": 30
+        },
+        "rt-1749505607899": {
+          "hours": 10,
+          "required": 1
+        }
+      },
+      "milestones": [],
+      "asanaUrl": "https://app.asana.com/1/1136653049084869/project/1210390640814941/task/1210391302265438",
+      "resourceTypeId": null,
+      "pmAllocation": 20,
+      "autoPopulatePM": false,
+      "estimatedHours": 0,
+      "pmHours": 0,
+      "totalHours": 40,
+      "hoursUsed": 0,
+      "simpleMode": false,
+      "dependencies": []
+    },
+    {
+      "id": "asana-1210391302265434",
+      "name": "Credit Ownership & Time Tracking",
+      "description": "What are checkpoints that we're capturing\nWhat are the metrics that we are measuring?\nWhat reports/dashboards will this be need for?\nWhat flows will this trigger?\nWhat notifications will need to happen?",
+      "valueStreamId": "vs-1749489719651",
+      "startDate": "2025-09-11",
+      "endDate": "2025-11-14",
+      "status": "planned",
+      "priority": "high",
+      "progress": 0,
+      "resources": {
+        "rt-1749505590446": {
+          "allocated": 1,
+          "required": 1,
+          "hours": 20
+        },
+        "rt-1749505607899": {
+          "hours": 10
+        }
+      },
+      "milestones": [],
+      "asanaUrl": "https://app.asana.com/1/1136653049084869/project/1210390640814941/task/1210391302265434",
+      "resourceTypeId": null,
+      "pmAllocation": 20,
+      "autoPopulatePM": false,
+      "estimatedHours": 0,
+      "pmHours": 0,
+      "totalHours": 30,
+      "hoursUsed": 0,
+      "simpleMode": false,
+      "dependencies": []
+    },
+    {
+      "id": "asana-1210390931454642",
+      "name": "Sales Tax Discovery",
+      "description": "",
+      "valueStreamId": "vs-1749489719651",
+      "startDate": "2025-09-12",
+      "endDate": "2025-10-01",
+      "status": "planned",
+      "priority": "medium",
+      "progress": 0,
+      "resources": {
+        "rt-1749505590446": {
+          "allocated": 1,
+          "required": 1
+        }
+      },
+      "milestones": [],
+      "asanaUrl": "https://app.asana.com/1/1136653049084869/project/1210390640814941/task/1210390931454642",
+      "resourceTypeId": null,
+      "pmAllocation": 20,
+      "autoPopulatePM": false,
+      "estimatedHours": 5,
+      "pmHours": 0,
+      "totalHours": 5,
+      "simpleMode": true,
+      "hoursUsed": 0,
+      "dependencies": []
+    },
+    {
+      "name": "SFDC UX Optimization for Sales",
+      "description": "",
+      "startDate": "2025-10-22",
+      "endDate": "2025-11-09",
+      "priority": "low",
+      "status": "planned",
+      "progress": 0,
+      "valueStreamId": "vs-1749489787473",
+      "resources": {
+        "rt-1749505590446": {
+          "hours": 30,
+          "required": 1
+        },
+        "rt-1749505607899": {
+          "required": 1,
+          "hours": 10
+        }
+      },
+      "milestones": [],
+      "asanaUrl": "",
+      "pmAllocation": 20,
+      "autoPopulatePM": false,
+      "hoursUsed": 0,
+      "totalHours": 40,
+      "simpleMode": false,
+      "estimatedHours": 0,
+      "pmHours": 0,
+      "dependencies": [],
+      "id": "proj-1749766825840"
+    }
+  ],
+  "valueStreams": [
+    {
+      "id": "vs-1749489636255",
+      "name": "1. Application Intake",
+      "description": "",
+      "color": "#8B5CF6",
+      "primaryStakeholder": "",
+      "scorecardMetrics": ""
+    },
+    {
+      "id": "vs-1749489719651",
+      "name": "2. Credit Underwriting",
+      "description": "",
+      "color": "#10B981",
+      "primaryStakeholder": "",
+      "scorecardMetrics": ""
+    },
+    {
+      "id": "vs-1749489737585",
+      "name": "3. Documentation",
+      "description": "",
+      "color": "#3B82F6",
+      "primaryStakeholder": "",
+      "scorecardMetrics": ""
+    },
+    {
+      "id": "vs-1749489755025",
+      "name": "4. Funding",
+      "description": "",
+      "color": "#84CC16",
+      "primaryStakeholder": "",
+      "scorecardMetrics": ""
+    },
+    {
+      "id": "vs-1749489768978",
+      "name": "5. Servicing & Collections",
+      "description": "",
+      "color": "#EF4444",
+      "primaryStakeholder": "",
+      "scorecardMetrics": ""
+    },
+    {
+      "id": "vs-1749489787473",
+      "name": "6. Client/Broker/Dealer Relationship Management",
+      "description": "",
+      "color": "#F59E0B",
+      "primaryStakeholder": "",
+      "scorecardMetrics": ""
+    },
+    {
+      "id": "vs-1749489871306",
+      "name": "7. Product & Program Innovation",
+      "description": "",
+      "color": "#EC4899",
+      "primaryStakeholder": "",
+      "scorecardMetrics": ""
+    },
+    {
+      "id": "vs-1749489900284",
+      "name": "8. Maintenance",
+      "description": "",
+      "color": "#06B6D4",
+      "primaryStakeholder": "",
+      "scorecardMetrics": ""
+    }
+  ],
+  "resourceTypes": [
+    {
+      "id": "rt-1749505590446",
+      "name": "Sr Consultant",
+      "hourlyRate": 185,
+      "capacity": 1,
+      "color": "#3B82F6"
+    },
+    {
+      "id": "rt-1749505607899",
+      "name": "Senior Engineer",
+      "hourlyRate": 185,
+      "capacity": 1,
+      "color": "#8B5CF6"
+    },
+    {
+      "id": "rt-1749507630265",
+      "name": "Senior Architect",
+      "hourlyRate": 200,
+      "capacity": 1,
+      "color": "#F59E0B"
+    }
+  ],
+  "clientName": "MaximCC",
+  "contractHours": 30,
+  "rocks": [],
+  "exportDate": "2025-06-12T22:43:39.684Z",
+  "version": "1.0"
+}

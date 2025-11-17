@@ -1,0 +1,54 @@
+{
+  "date": "Unknown",
+  "attendees": [
+    "Michael Kianmahd",
+    "Laura"
+  ],
+  "summary": "Discussion focused on Conga transaction utilization issues and account structure for individual vs business customers. The team discussed an urgent notice about over-utilization of Conga Composer transactions and potential cost implications of $4,000. They also explored how to handle customer accounts when individuals later form business entities.",
+  "key_topics": [
+    "Conga transaction over-utilization and costs",
+    "Gmail settings and communication preferences",
+    "Account structure for individual vs business customers",
+    "Sole proprietor vs legal entity distinctions"
+  ],
+  "decisions": [
+    "Communication with Laura should go to Faye email, not Maxim email",
+    "Individual accounts should not be renamed when customer forms a business - new opportunities should be created instead"
+  ],
+  "action_items": [
+    {
+      "owner": "Laura",
+      "task": "Schedule meeting with Conga representative to discuss utilization"
+    }
+  ],
+  "concerns": [
+    "Over-utilization of Conga transactions leading to additional costs",
+    "Lack of visibility into how Conga is being used across teams",
+    "Potential inefficient use of software licenses"
+  ],
+  "michael_priorities": [
+    "Understanding and controlling Conga license costs",
+    "Having strategic approach to software spending",
+    "Proper account structure maintenance",
+    "Avoiding incremental cost discussions without full contract understanding"
+  ],
+  "commitments": [
+    {
+      "owner": "Laura",
+      "commitment": "Will investigate Conga usage and come back with either reduction strategies or confirmation that additional payment is needed"
+    }
+  ],
+  "filename": "23-MK-LD.pdf",
+  "metadata": {
+    "number": "23",
+    "attendees": [
+      "Michael Kianmahd",
+      "Laura Dolphin"
+    ],
+    "attendee_initials": [
+      "MK",
+      "LD"
+    ],
+    "filename": "23-MK-LD.pdf"
+  }
+}

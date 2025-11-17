@@ -1,0 +1,63 @@
+{
+  "date": "Unknown",
+  "attendees": [
+    "Michael Kianmahd",
+    "Laura"
+  ],
+  "summary": "Discussion focused on project hours status and next steps, with Michael updating on COO hiring process. Currently at 86 hours used out of 90 quarterly hours, with possibility to go over by 45 hours at same rate. Michael is conducting COO interviews while managing multiple urgent priorities.",
+  "key_topics": [
+    "Project hours status and billing",
+    "COO hiring process",
+    "Resource allocation",
+    "Conga/Plotty system access"
+  ],
+  "decisions": [
+    "Will take a week to get organized before making next steps on resourcing",
+    "OK to continue work and go over hours if needed"
+  ],
+  "action_items": [
+    {
+      "owner": "Laura",
+      "task": "Look into Conga issue previously raised"
+    },
+    {
+      "owner": "Michael",
+      "task": "Talk to Dave and organize questions for Laura"
+    },
+    {
+      "owner": "Laura",
+      "task": "Communicate with management about future resource needs"
+    }
+  ],
+  "concerns": [
+    "Project costing more than expected",
+    "Michael's time constraints and competing priorities",
+    "Technology knowledge gaps",
+    "Limited availability of qualified resources",
+    "Potential delays in securing additional resources"
+  ],
+  "michael_priorities": [
+    "Finding right COO candidate",
+    "Managing project costs",
+    "Getting organized before making next resource decisions",
+    "Understanding billing and system access"
+  ],
+  "commitments": [
+    "Laura will review the Conga issue",
+    "Michael will prioritize organizing next steps and follow-up conversations",
+    "Laura will continue work with engineering team"
+  ],
+  "filename": "13-MK-LD.pdf",
+  "metadata": {
+    "number": "13",
+    "attendees": [
+      "Michael Kianmahd",
+      "Laura Dolphin"
+    ],
+    "attendee_initials": [
+      "MK",
+      "LD"
+    ],
+    "filename": "13-MK-LD.pdf"
+  }
+}
